@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resource :dashboard, only: [ :show ]
 
-  resources :associations do
+  resources :assos do
     resources :favs, only: [ :new, :create ]
   end
 end
