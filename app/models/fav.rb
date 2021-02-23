@@ -1,6 +1,6 @@
 class Fav < ApplicationRecord
   belongs_to :user
-  belongs_to :association
+  belongs_to :asso
 
-  validates :user_id, uniqueness: { scope: :association_id }
+  validates :user_id, uniqueness: { scope: :asso_id }
 end
