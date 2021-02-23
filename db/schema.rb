@@ -10,21 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_22_151155) do
+ActiveRecord::Schema.define(version: 2021_02_23_162309) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "association_tags", force: :cascade do |t|
-    t.bigint "association_id", null: false
     t.bigint "tag_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["association_id"], name: "index_association_tags_on_association_id"
+    t.bigint "asso_id"
+    t.index ["asso_id"], name: "index_association_tags_on_asso_id"
     t.index ["tag_id"], name: "index_association_tags_on_tag_id"
   end
 
-  create_table "associations", force: :cascade do |t|
+  create_table "assos", force: :cascade do |t|
     t.string "name"
     t.string "address"
     t.string "city"
@@ -44,10 +44,10 @@ ActiveRecord::Schema.define(version: 2021_02_22_151155) do
 
   create_table "favs", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.bigint "association_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["association_id"], name: "index_favs_on_association_id"
+    t.bigint "asso_id"
+    t.index ["asso_id"], name: "index_favs_on_asso_id"
     t.index ["user_id"], name: "index_favs_on_user_id"
   end
 
@@ -79,9 +79,7 @@ ActiveRecord::Schema.define(version: 2021_02_22_151155) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "association_tags", "associations"
   add_foreign_key "association_tags", "tags"
-  add_foreign_key "favs", "associations"
   add_foreign_key "favs", "users"
   add_foreign_key "sub_categories", "categories"
   add_foreign_key "tags", "sub_categories"
