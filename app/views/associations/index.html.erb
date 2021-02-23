@@ -1,0 +1,48 @@
+<h2>Faites vous aider</h2>
+<p>Trouvons ensemble le chemin vers la solution</p>
+
+ <%= image_tag("https://images.unsplash.com/photo-1508847154043-be5407fcaa5a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80",
+        width: 400, height: 300, crop: :fill) %>
+<%= link_to "Solidarité", associations_path %>
+<%= image_tag("https://images.unsplash.com/photo-1604604557577-4e27a33e57da?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+        width: 400, height: 300, crop: :fill) %>
+<%= link_to "Assistance", associations_path %>
+<%= image_tag("https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+        width: 400, height: 300, crop: :fill) %>
+<%= link_to "Financier", associations_path %>
+
+  <%= form_tag associations_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Rechercher une association"
+    %>
+    <%= button_tag do %>
+      <%= icon 'fas', 'search' %>
+    <% end %>
+  <% end %>
+
+<div class="asso-cards">
+<div class="asso-card">
+  <% @associations.each do |association| %>
+    <%= link_to association_path(association) do %>
+    <%= association.name %>
+    <%= association.address %>
+    <%= association.city %>
+    <%= association.description %>
+    <%= association.email %>
+    <%= association.website %>
+    <%= association.phone_number %>
+    <% end %>
+  <% end %>
+  </div>
+</div>
+
+
+
+<footer class="footer">
+  <p>Made with <%= icon 'fas', 'heart' %> by Helpers' Team</p>
+  <%= icon 'fab', 'twitter' %>
+  <%= icon 'fab', 'facebook' %>
+  <%= icon 'fab', 'instagram' %>
+</footer>
