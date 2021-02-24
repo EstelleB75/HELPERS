@@ -7,5 +7,5 @@ class Asso < ApplicationRecord
   validates :name, presence: true
   validates :city, presence: true
   validates :description, presence: true
-  validates :email, presence: true
+  # validates :email, presence: true
 end
