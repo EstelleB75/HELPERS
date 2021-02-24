@@ -1,4 +1,10 @@
-    <%= image_tag("user.png",
-        width: 200, height: 200, crop: :fill) %>
+<%= image_tag("user.png",
+    width: 200, height: 200, crop: :fill) %>
 
-        <h3>Mes favoris</h3>
+<h3>Mes favoris</h3>
+
+
+
+<% if user.admin? %>
+  <%= link_to new_asso_path %>
+<% end %>
