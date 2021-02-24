@@ -1,0 +1,60 @@
+.px-5vw {
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+
+.py-10vh {
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+}
+
+.separator {
+  border-top: 1px solid #000;
+  width: 300px;
+  margin: 0 auto;
+}
+
+.helpers-rounded {
+  border-radius: 10px;
+}
+
+.helpers-green {
+  background-color: #90DFD6;
+}
+
+.helpers-green a {
+  color: #002903;
+  &:hover
+  {
+    text-decoration: none;
+  }
+}
+
+.helpers-red {
+  background-color: #C43256;
+}
+
+.helpers-red a {
+  color: #fff;
+  &:hover
+  {
+    text-decoration: none;
+  }
+}
+
+.helpers-yellow {
+  background-color: #FFCB67;
+}
+
+.helpers-yellow a {
+  color: #000022;
+  &:hover
+  {
+    text-decoration: none;
+  }
+}
+
+.demi-rounded {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
