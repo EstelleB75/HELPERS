@@ -1,16 +1,10 @@
-    
-    <%= association.name %>
-    <%= association.address %>
-    <%= association.city %>
-    <%= association.description %>
-    <%= association.email %>
-    <%= association.website %>
-    <%= association.phone_number %>
-
-    <% if @association.photo.attached? %>
-  <%= cl_image_tag(@association.photo.key,
-      width: 400, height: 300, crop: :fill) %>
-    <% else %>
-  <%= image_tag("building-2696768_960_720.png",
+<%= image_tag("building-2696768_960_720.png",
         width: 400, height: 300, crop: :fill) %>
-<% end %>
+    <%= @asso.name %>
+    <%= @asso.address %>
+    <%= @asso.city %>
+    <%= @asso.description %>
+    <%= @asso.email %>
+    <%= @asso.website %>
+    <%= @asso.phone_number %>
+
