@@ -4,7 +4,6 @@
 <h3>Mes favoris</h3>
 
 
-
-<% if user.admin? %>
-  <%= link_to new_asso_path %>
+<% if current_user.admin? %>
+  <%= link_to "Créer une asso", new_asso_path %>
 <% end %>
