@@ -25,7 +25,7 @@
 <div class="asso-cards">
 <div class="asso-card">
   <% @assos.each do |association| %>
-    <%= link_to association_path(association) do %>
+    <%= link_to asso_path(association) do %>
     <%= association.name %>
     <%= association.address %>
     <%= association.city %>
