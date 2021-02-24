@@ -24,16 +24,14 @@
 
 <div class="asso-cards">
 <div class="asso-card">
-  <% @assos.each do |association| %>
-    <%= link_to asso_path(association) do %>
-    <%= association.name %>
-    <%= association.address %>
-    <%= association.city %>
-    <%= association.description %>
-    <%= association.email %>
-    <%= association.website %>
-    <%= association.phone_number %>
-    <% end %>
+  <% @assos.each do |asso| %>
+    <%= link_to asso.name, asso_path(asso) %>
+    <%= asso.description %>
+    <%= asso.address %>
+    <%= icon 'fas', 'city' %> <%= asso.city %>
+    <%= icon 'far', 'envelope' %> <%= asso.email %>
+    <%= icon 'fas', 'at' %> <%= link_to "Site web", asso.website %>
+    <%= icon 'fas', 'phone' %> <%= asso.phone_number %>
   <% end %>
   </div>
 </div>
