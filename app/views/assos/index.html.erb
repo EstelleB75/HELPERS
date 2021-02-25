@@ -1,5 +1,5 @@
-<div class="py-10vh background-pink px-5vw">
-  <div class="text-center py-10vh w-100 px-5vw bg-white helpers-rounded m-2">
+<div class="py-5vh background-pink px-5vw">
+  <div class="text-center py-5vh w-100 px-5vw bg-white helpers-rounded">
     <h2>Faites vous aider</h2>
     <br>
       <div class="separator d-flex justify-content-center align-items-center"></div>
@@ -7,19 +7,19 @@
     <p class="text-muted">Trouvons ensemble le chemin vers la solution</p>
     <br>
       <div class="row d-flex justify-content-between mx-0 py-5">
-        <div class="col-3 d-flex flex-column justify-content-center align-items-center">
+        <div class="col-3 d-flex flex-column justify-content-center align-items-center rounded">
           <div style="background-image: url('https://images.unsplash.com/photo-1508847154043-be5407fcaa5a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1'); height: 300px; background-size: cover; background-position: center; width: 100%;"></div>
             <div class="d-flex w-100 justify-content-center align-items-center helpers-green demi-rounded p-3">
               <%= link_to "Solidarité", solidarite_path %>
             </div>
         </div>
-        <div class="col-4 d-flex flex-column justify-content-center align-items-center">
+        <div class="col-4 d-flex flex-column justify-content-center align-items-center rounded">
           <div style="background-image: url('https://images.unsplash.com/photo-1604604557577-4e27a33e57da?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1'); height: 300px; background-size: cover; background-position: center; width: 100%;"></div>
             <div class="d-flex w-100 justify-content-center align-items-center helpers-red demi-rounded p-3">
               <%= link_to "Assistance", assistance_path %>
             </div>
         </div>
-        <div class="col-3 d-flex flex-column justify-content-center align-items-center">
+        <div class="col-3 d-flex flex-column justify-content-center align-items-center rounded">
           <div style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1'); height: 300px; background-size: cover; background-position: center; width: 100%;"></div>
             <div class="d-flex w-100 justify-content-center align-items-center helpers-yellow demi-rounded p-3">
               <%= link_to "Financier", financier_path %>
@@ -29,37 +29,49 @@
   </div>
 </div>
 
-
-  <%= form_tag assos_path, method: :get do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Rechercher une association"
-    %>
-    <%= button_tag do %>
-      <%= icon 'fas', 'search' %>
+<div class="bg-white index-display pt-5">
+  <h2 class="text-center bolder-text">Toutes nos associations</h2>
+  <div class="separator d-flex justify-content-center align-items-center"></div>
+  <br>
+  <br>
+    <%= form_tag assos_path, class: "d-flex justify-content-center align-items-center", method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control search-rounded search d-flex justify-content-center align-items-center w-500 position-relative",
+        placeholder: "Rechercher une association"
+      %>
+      <%= button_tag do %>
+        <%= icon 'fas', 'search' %>
+      <% end %>
     <% end %>
-  <% end %>
 
-<div class="asso-cards">
-<div class="asso-card">
-  <% @assos.each do |asso| %>
-    <%= link_to asso.name, asso_path(asso) %>
-    <%= asso.description %>
-    <%= asso.address %>
-    <%= icon 'fas', 'city' %> <%= asso.city %>
-    <%= icon 'far', 'envelope' %> <%= asso.email %>
-    <%= icon 'fas', 'at' %> <%= link_to "Site web", asso.website %>
-    <%= icon 'fas', 'phone' %> <%= asso.phone_number %>
-  <% end %>
+
+  <div class="asso-cards m-5">
+    <div class="d-flex flex-wrap flex-row justify-content-center align-items-center">
+      <% @assos.each do |asso| %>
+        <div class="w-50 my-3 d-flex justify-content-center align-items-center">
+          <div class="asso-card d-flex justify-content-start flex-column custom-rounded border custom-size">
+            <%= link_to asso.name, asso_path(asso), class: "text-left" %>
+            <%= asso.description %>
+            <%= asso.address %>
+            <div class="d-flex justify-content-center flex-row ">
+              <div class="px-2"><%= icon 'fas', 'city' %> <%= asso.city %></div>
+              <div class="px-2"><%= icon 'far', 'envelope' %> <%= asso.email%></div>
+              <div class="px-2"><%= icon 'fas', 'at' %> <%= link_to "Site web", asso.website%></div>
+              <div class="px-2"><%= icon 'fas', 'phone' %> <%= asso.phone_number%></div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
+
+
+
+  <footer class="footer">
+    <p>Made with <%= icon 'fas', 'heart' %> by Helpers' Team</p>
+    <%= icon 'fab', 'twitter' %>
+    <%= icon 'fab', 'facebook' %>
+    <%= icon 'fab', 'instagram' %>
+  </footer>
 </div>
-
-
-
-<footer class="footer">
-  <p>Made with <%= icon 'fas', 'heart' %> by Helpers' Team</p>
-  <%= icon 'fab', 'twitter' %>
-  <%= icon 'fab', 'facebook' %>
-  <%= icon 'fab', 'instagram' %>
-</footer>
