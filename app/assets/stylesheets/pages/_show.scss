@@ -1,0 +1,36 @@
+#asso-name {
+  font-size: 29px;
+  margin-top: 10px;
+  margin-left: 20px;
+  padding-top: 20px;
+}
+
+#profile {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+#asso-phone {
+  padding-left: 20px;
+  font-size: 21px;
+}
+
+#asso-coord {
+  text-align: end;
+  padding-right: 20px;
+  padding-top: 20px;
+  margin-top: 10px;
+}
+
+#asso-des {
+  font-size: 14.5px;
+  padding-left: 20px;
+  color: darkgrey;
+  text-align: justify;
+  padding-right: 60px;
+  padding-top: 6px;
+}
+
+.photo-show{
+  width: 300px;
+}

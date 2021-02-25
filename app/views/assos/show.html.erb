@@ -1,9 +1,32 @@
-<%= image_tag("building-2696768_960_720.png",
-        width: 400, height: 300, crop: :fill) %>
-    <%= @asso.name %>
-    <%= @asso.address %>
-    <%= @asso.city %>
-    <%= @asso.description %>
-    <%= @asso.email %>
-    <%= @asso.website %>
-    <%= @asso.phone_number %>
+
+<div class="bg-white helpers-rounded m-2">
+  <div id="profile">
+    <div>
+      <div>
+        <h1 id="asso-name"> <%= @asso.name %> </h1>
+        <h2 id="asso-phone"> <%= @asso.phone_number %> </h2>
+        <h2 id="asso-des"> <%= @asso.description %> </h2>
+      </div>
+
+      </div>
+
+
+    <div>
+      <div id="asso-coord">
+        <%= @asso.address %>
+        <div>
+        <%= @asso.city %>
+        </div>
+      </div >
+      <div>
+
+      </div>
+      <div class="btn-show">
+        <%= @asso.email %>
+      </div>
+      <div class="btn-show">
+        <%= @asso.website %>
+      </div>
+    </div>
+  </div>
+</div>
