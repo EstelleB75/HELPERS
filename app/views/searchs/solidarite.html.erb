@@ -1,74 +1,81 @@
-<h1>Solidarité</h1>
-<div class="question-1">
+<div class="container-form" data-questions="[]">
+<div class="question-1 question" data-question="0">
 <h2>De quelle type d'aide avez-vous besoin ?</h2>
+<div class="separator d-flex justify-content-center align-items-center"></div>
 <div class="btn-group-vertical">
-  <button type="button" class="btn btn-secondary" id="question-2-1">Santé</button>
-  <button type="button" class="btn btn-secondary" id="question-2-2">Aide à la personne</button>
-  <button type="button" class="btn btn-secondary" id="question-2-3">Alimentaire</button>
-  <button type="button" class="btn btn-secondary" id="question-2-4">Culture / Loisirs</button>
+  <button type="button" class="btn-question" data-target="1"><%= icon('fas', 'heart') %>    Santé</button>
+  <button type="button" class="btn-question" data-target="2"><%= icon('fas', 'hands-helping') %>    Aide à la personne</button>
+  <button type="button" class="btn-question" data-target="3"> <%= icon('fas', 'utensils') %>   Alimentaire</button>
+  <button type="button" class="btn-question" data-target="4"><%= icon('fas', 'running') %>    Culture / Loisirs</button>
 </div>
 </div>
 
 <div class="question-2">
-<div class="question-2-1 hidden">
+<div class="question-2-1 hidden question" data-question="1" >
 <h2>De quelle type d'aide avez-vous besoin ?</h2>
 <div class="btn-group-vertical">
-  <button type="button" class="btn btn-secondary" id="question-2-1-1">Maladie</button>
-  <button type="button" class="btn btn-secondary" id="question-2-1-2">Mutuelle</button>
-  <button type="button" class="btn btn-secondary" id="question-2-1-3">Nutrition</button>
-  <button type="button" class="btn btn-secondary" id="question-2-1-4">Bien-être</button>
-  <button type="button" class="btn btn-secondary" id="question-2-1-5">Déces</button>
-  <button type="button" class="btn btn-secondary" id="question-2-1-6">Complémentaire</button>
+  <button type="button" class="btn-question" data-target="">Maladie</button>
+  <button type="button" class="btn-question" id="question-2-1-2">Mutuelle</button>
+  <button type="button" class="btn-question" id="question-2-1-3">Nutrition</button>
+  <button type="button" class="btn-question" id="question-2-1-4">Bien-être</button>
+  <button type="button" class="btn-question" id="question-2-1-5">Déces</button>
+  <button type="button" class="btn-question" id="question-2-1-6">Complémentaire</button>
+  <button type="button" class="btn-back" id="question-1"><%= icon('fas', 'step-backward') %> Question précédente</button> 
 </div>
 </div>
 
-<div class="question-2-2 hidden">
+<div class="question-2-2 hidden question" data-question="2" >
 <h2>De quelle type d'aide avez-vous besoin ?</h2>
 <div class="btn-group-vertical">
-  <button type="button" class="btn btn-secondary">Aide à domicile</button>
-  <button type="button" class="btn btn-secondary">Soin</button>
-  <button type="button" class="btn btn-secondary">Mobilité</button>
-  <button type="button" class="btn btn-secondary">Lien social</button>
-  <button type="button" class="btn btn-secondary">Service</button>
-  <button type="button" class="btn btn-secondary">Personne âgée</button>
+  <button type="button" class="btn-question">Aide à domicile</button>
+  <button type="button" class="btn-question">Soin</button>
+  <button type="button" class="btn-question">Mobilité</button>
+  <button type="button" class="btn-question">Lien social</button>
+  <button type="button" class="btn-question">Service</button>
+  <button type="button" class="btn-question">Personne âgée</button>
 </div>
+<button type="button" class="btn-direction">Précédent</button> 
 </div>
 
-<div class="question-2-3 hidden">
+<div class="question-2-3 hidden question" data-question="3">
 <h2>De quelle type d'aide avez-vous besoin ?</h2>
 <div class="btn-group-vertical">
-  <button type="button" class="btn btn-secondary">Bon d'achat</button>
-  <button type="button" class="btn btn-secondary">Paniers</button>
-  <button type="button" class="btn btn-secondary">Dons</button>
-  <button type="button" class="btn btn-secondary">Tickets restaurants</button>
-  <button type="button" class="btn btn-secondary">Entraide</button>
+  <button type="button" class="btn-question">Bon d'achat</button>
+  <button type="button" class="btn-question">Paniers</button>
+  <button type="button" class="btn-question">Dons</button>
+  <button type="button" class="btn-question">Tickets restaurants</button>
+  <button type="button" class="btn-question">Entraide</button>
 </div>
+<button type="button" class="btn-direction">Précédent</button> 
 </div>
 
-<div class="question-2-4 hidden">
+<div class="question-2-4 hidden question" data-question="4">
 <h2>De quelle type d'aide avez-vous besoin ?</h2>
 <div class="btn-group-vertical">
-  <button type="button" class="btn btn-secondary">Sport</button>
-  <button type="button" class="btn btn-secondary">Vacances</button>
-  <button type="button" class="btn btn-secondary">Musée</button>
-  <button type="button" class="btn btn-secondary">Activité</button>
-  <button type="button" class="btn btn-secondary">Réduction</button>  
-  <button type="button" class="btn btn-secondary">Cours</button> 
+  <button type="button" class="btn-question">Sport</button>
+  <button type="button" class="btn-question">Vacances</button>
+  <button type="button" class="btn-question">Musée</button>
+  <button type="button" class="btn-question">Activité</button>
+  <button type="button" class="btn-question">Réduction</button>  
+  <button type="button" class="btn-question">Cours</button> 
 </div>
-</div>
+<button type="button" class="btn-direction">Précédent</button> 
 </div>
 
-<div class="question-3 hidden">
+</div>
+
+<div class="question-3 hidden question" >
 <h2>De quelle type d'aide avez-vous besoin ?</h2>
 <select class="custom-select custom-select-lg mb-3">
-  <option selected>Toute la région</option>
+  <option selected id="selected-option">Toute la région</option>
   <option value="1">Paris (75)</option>
   <option value="2">Seine-et-Marne (77)</option>
   <option value="3">Yvelines (78)</option>
-  <option value="1">Essonne (91)</option>
-  <option value="2">Hauts-de-Seine (92)</option>
-  <option value="3">Seine-Saint-Denis (93)</option>
-  <option value="1">Val-de-Marne (94)</option>
-  <option value="2">Val-d'Oise (95)</option>
+  <option value="4">Essonne (91)</option>
+  <option value="5">Hauts-de-Seine (92)</option>
+  <option value="7">Seine-Saint-Denis (93)</option>
+  <option value="8">Val-de-Marne (94)</option>
+  <option value="9">Val-d'Oise (95)</option>
 </select>
+</div>
 </div>

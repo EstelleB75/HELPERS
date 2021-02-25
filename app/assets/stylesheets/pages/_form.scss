@@ -1,0 +1,42 @@
+.btn-question {
+  background-color: white;
+  padding: 20px;
+  width: 1000px;
+  color:#C43256 ;
+  margin: 30px;
+  border-radius: 10px;
+  border-width: 1px;
+ border-color: red;
+ box-shadow: 1px 1px 8px 0px rgba(0,0,0,0.75);
+ i {
+margin-right: 8px
+ }
+}
+
+.container-form {
+  margin-top: 50px;
+margin-right: auto;
+margin-bottom: 0;
+margin-left: auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center ;
+  background-color: white;
+  width: 90%;
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-bottom: 30px;
+  h2 {
+    margin-top: 30px;
+    margin-bottom:30px;
+  }
+}
+
+.custom-select {
+    color:#C43256;
+}
+
+.btn-direction {
+  border-width:0px;
+  color: #C43256;
+}
