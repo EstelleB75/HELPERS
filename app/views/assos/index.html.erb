@@ -42,17 +42,21 @@
   <% end %>
 
 <div class="asso-cards">
-<div class="asso-card">
   <% @assos.each do |asso| %>
-    <%= link_to asso.name, asso_path(asso) %>
-    <%= asso.description %>
-    <%= asso.address %>
-    <%= icon 'fas', 'city' %> <%= asso.city %>
-    <%= icon 'far', 'envelope' %> <%= asso.email %>
-    <%= icon 'fas', 'at' %> <%= link_to "Site web", asso.website %>
-    <%= icon 'fas', 'phone' %> <%= asso.phone_number %>
+  <% if asso.photo.attached? %>
+    <div class="asso-card" style="background-image: url('<%= cl_image_path asso.photo.key, height: 350, width: 300, crop: :fill %>')">
+  <% else %>
+    <div class="asso-card">
   <% end %>
-  </div>
+        <%= link_to asso.name, asso_path(asso) %>
+        <%= asso.description %>
+        <%= asso.address %>
+        <%= icon 'fas', 'city' %> <%= asso.city %>
+        <%= icon 'far', 'envelope' %> <%= asso.email %>
+        <%= icon 'fas', 'at' %> <%= link_to "Site web", asso.website %>
+        <%= icon 'fas', 'phone' %> <%= asso.phone_number %>
+    </div>
+  <% end %>
 </div>
 
 
