@@ -3,9 +3,9 @@
   padding-right: 5vw;
 }
 
-.py-10vh {
-  padding-top: 10vh;
-  padding-bottom: 10vh;
+.py-5vh {
+  padding-top: 5vh;
+  padding-bottom: 5vh;
 }
 
 .separator {
@@ -57,4 +57,33 @@
 .demi-rounded {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+}
+
+.search-rounded {
+  border-radius: 58px;
+}
+
+.custom-rounded {
+  border-radius: 20px;
+}
+
+.custom-size {
+  width: 600px;
+  height: 150px;
+}
+
+.search {
+  width: 500px;
+  height: 80px;
+}
+
+.index-display button {
+  border: none;
+  background-color: transparent;
+  margin-left: -50px;
+  z-index: 1;
+}
+
+.bolder-text {
+  font-weight: 700;
 }
