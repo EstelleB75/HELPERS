@@ -64,8 +64,7 @@ def set_asso(name, url, city, description)
 end
     
 associations = [
-    {name: "Les Restos du coeur", photo: "https://causeaeffet.com/wp-content/uploads/2019/11/resto-du-coeur-logo.jpg",
-    city: "Paris", description: "Les Restos ont pour but « d'aider et d'apporter une assistance bénévole aux personnes démunies, notamment dans le domaine alimentaire par l'accès à des repas gratuits"},
+    {name: "Les Restos du coeur", photo: "https://causeaeffet.com/wp-content/uploads/2019/11/resto-du-coeur-logo.jpg", city: "Paris", description: "Les Restos ont pour but « d'aider et d'apporter une assistance bénévole aux personnes démunies, notamment dans le domaine alimentaire par l'accès à des repas gratuits"},
     {name: "Emmaüs", photo: "https://upload.wikimedia.org/wikipedia/fr/thumb/4/4d/Logo_EF_Couleur.svg/1200px-Logo_EF_Couleur.svg.png", city: "Paris", description: "Fidèle à la volonté de l'abbé Pierre, Emmaüs est devenu à la fois une fabrique d'innovations sociales et de solidarités pour aider des publics en situation de grande précarité"},
     {name: "Je t'aide", photo: "https://associationjetaide.org/wp-content/uploads/2020/07/logo-jetaide-scaled.jpg", city: "Paris", description: "Luttons contre l'isolement social des aidant.es !"},
     {name: "Aurore Association", photo: "https://upload.wikimedia.org/wikipedia/fr/f/fe/Association_Aurore_logo.png", city: "Paris", description: "Accueillir et accompagner vers l’autonomie les personnes en situation de précarité ou d’exclusion via l’hébergement, les soins et l’insertion."},

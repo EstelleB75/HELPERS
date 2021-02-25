@@ -3,6 +3,11 @@
 
 <h3>Mes favoris</h3>
 
+<% current_user.favs.each do |fav| %>
+  <p><%= fav.asso.name %></p>
+<% end %>
+  
+
 
 <% if current_user.admin? %>
   <%= link_to "Créer une asso", new_asso_path %>

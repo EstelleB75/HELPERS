@@ -8,4 +8,12 @@ class User < ApplicationRecord
 
   # validates :first_name, presence: true
   # validates :last_name, presence: true
+
+  def favorites?(asso)
+    self.favs.map(&:asso_id).include?(asso.id)
+  end
+
+  def get_fav(asso)
+    self.favs.find_by(asso_id: asso.id)
+  end
 end
