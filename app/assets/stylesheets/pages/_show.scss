@@ -1,0 +1,75 @@
+#asso-name {
+  font-size: 29px;
+  margin-top: 10px;
+  margin-left: 20px;
+  padding-top: 20px;
+  font-weight: 600
+}
+
+#profile {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+}
+
+#showbtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 10px;
+}
+
+#show-tagbtn {
+  margin-left: 46px;
+  font-size: 22px;
+}
+
+#show-tag {
+  font-size: 18px;
+  color: #6c757d;
+  margin-left: 50px;
+  margin-top: 63px;
+}
+
+#show-cat {
+  font-size: 30px;
+  margin-top: 10px;
+}
+
+.btn-show {
+  padding: 20px;
+  box-shadow: 1px 1px 1px 1px lightgrey;
+  a {
+   text-decoration: none;
+   color: black;
+   &:hover {
+    text-decoration: none;
+   color: lightgrey;
+   }
+  }
+}
+
+#asso-phone {
+  padding-left: 20px;
+  font-size: 21px;
+}
+
+#asso-coord {
+  text-align: end;
+  padding-right: 20px;
+  padding-top: 20px;
+  margin-top: 10px;
+}
+
+#asso-des {
+  font-size: 14.5px;
+  padding-left: 20px;
+  color: darkgrey;
+  text-align: justify;
+  padding-right: 60px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.photo-show{
+  width: 300px;
+}
