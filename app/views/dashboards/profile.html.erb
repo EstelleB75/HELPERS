@@ -4,7 +4,7 @@
 <h3>Mes favoris</h3>
 
 <% current_user.favs.each do |fav| %>
-  <p><%= fav.asso.name %></p>
+  <p><%= fav.asso.name %> <%= link_to "Delete this Favorite", fav_path(fav, source: "dashboard"), method: :delete %></p>
 <% end %>
   
 
