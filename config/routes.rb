@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   resources :assos do
     resources :favs, only: [ :new, :create ]
   end
+
+  resources :favs, only: [ :destroy ]
 end

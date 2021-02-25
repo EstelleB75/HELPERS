@@ -62,6 +62,11 @@
               <div class="px-2"><%= icon 'far', 'envelope' %> <%= asso.email%></div>
               <div class="px-2"><%= icon 'fas', 'at' %> <%= link_to "Site web", asso.website%></div>
               <div class="px-2"><%= icon 'fas', 'phone' %> <%= asso.phone_number%></div>
+              <% if current_user.favorites?(asso) %>
+                <%= link_to "unFav", fav_path(Fav.find_by(asso: asso, user: current_user)), method: :delete %>
+              <% else %>
+                <%= link_to "Fav", asso_favs_path(asso), method: :post %>
+              <% end %>
             </div>
           </div>
         </div>
