@@ -2,16 +2,8 @@
 @import "home";
 @import "dashboard";
 
-
-// .asso-cards{
-//     padding: 25px;
-//     display: grid;
-//     grid-template-columns: 1fr 1fr 1fr;
-//     grid-gap: 25px;
-//     .asso-card{
-//         width: 350px;
-//         background-repeat: no-repeat;
-//         background-size: contain;
-//         background-position: center center;
-//     }
-// }
+.asso-card img {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center; 
+}
