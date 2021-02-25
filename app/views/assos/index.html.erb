@@ -45,16 +45,19 @@
       <% end %>
     <% end %>
 
-
   <div class="asso-cards m-5">
     <div class="d-flex flex-wrap flex-row justify-content-center align-items-center">
       <% @assos.each do |asso| %>
         <div class="w-50 my-3 d-flex justify-content-center align-items-center">
-          <div class="asso-card d-flex justify-content-start flex-column custom-rounded border custom-size">
+           <% if asso.photo.attached? %>
+          <div class="asso-card d-flex justify-content-start flex-column custom-rounded border custom-size" style="background-image: url('<%= cl_image_path asso.photo.key, height: 350, width: 300, crop: :fill %>')">
+            <% else %>
+             <div class="asso-card d-flex justify-content-start flex-column custom-rounded border custom-size">
+               <% end %>
             <%= link_to asso.name, asso_path(asso), class: "text-left" %>
             <%= asso.description %>
             <%= asso.address %>
-            <div class="d-flex justify-content-center flex-row ">
+            <div class="d-flex justify-content-center flex-row">
               <div class="px-2"><%= icon 'fas', 'city' %> <%= asso.city %></div>
               <div class="px-2"><%= icon 'far', 'envelope' %> <%= asso.email%></div>
               <div class="px-2"><%= icon 'fas', 'at' %> <%= link_to "Site web", asso.website%></div>
@@ -65,6 +68,7 @@
       <% end %>
     </div>
   </div>
+
 
 
 
