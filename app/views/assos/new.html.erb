@@ -1,0 +1,13 @@
+<h1>Créer une Asso</h1>
+
+<%= simple_form_for @asso do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :city %>
+  <%= f.input :description %>
+  <%= f.input :email %>
+  <%= f.input :website %>
+  <%= f.input :phone_number %>
+  <%= f.submit "Créer" %>
+<% end %>
+
