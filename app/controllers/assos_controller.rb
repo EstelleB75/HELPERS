@@ -1,6 +1,11 @@
 class AssosController < ApplicationController
   def index
-    @assos = policy_scope(Asso)
+    if params[:query].present?
+      sql_query = "name ILIKE :query"
+      @assos = policy_scope(Asso.where(sql_query, query: "%#{params[:query]}%"))
+    else
+      @assos = policy_scope(Asso)
+    end
   end
 
   def show
