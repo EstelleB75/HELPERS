@@ -3,9 +3,30 @@
 
 <h3>Mes favoris</h3>
 
-<% current_user.favs.each do |fav| %>
-  <p><%= fav.asso.name %></p>
-<% end %>
+<div class="asso-cards m-5">
+    <div class="d-flex flex-wrap flex-row justify-content-center align-items-center">
+      <% current_user.favs.each do |fav| %>
+        <div class="w-50 my-3 d-flex justify-content-center align-items-center">
+           <% if fav.asso.photo.attached? %>
+          <div class="asso-card d-flex justify-content-start flex-column custom-rounded border custom-size" style="background-image: url('<%= cl_image_path fav.asso.photo.key, height: 350, width: 300, crop: :fill %>')">
+            <% else %>
+             <div class="asso-card d-flex justify-content-start flex-column custom-rounded border custom-size">
+               <% end %>
+            <%= link_to fav.asso.name, asso_path(fav.asso), class: "text-left" %>
+            <%= fav.asso.description %>
+            <%= fav.asso.address %>
+            <div class="d-flex justify-content-center flex-row">
+              <div class="px-2"><%= icon 'fas', 'city' %> <%= fav.asso.city %></div>
+              <div class="px-2"><%= icon 'far', 'envelope' %> <%= fav.asso.email%></div>
+              <div class="px-2"><%= icon 'fas', 'at' %> <%= link_to "Site web", fav.asso.website%></div>
+              <div class="px-2"><%= icon 'fas', 'phone' %> <%= fav.asso.phone_number%></div>
+              <%= link_to "Delete this Favorite", fav_path(fav, source: "dashboard"), method: :delete %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
   
 
 

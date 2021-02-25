@@ -14,6 +14,10 @@ class FavsController < ApplicationController
         @fav = Fav.find(params[:id])
         @fav.destroy
         authorize @fav
-        redirect_to assos_path
+        if params[:source] == "dashboard"
+            redirect_to dashboard_path
+        else
+            redirect_to assos_path
+        end
     end
 end
