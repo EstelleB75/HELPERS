@@ -1,71 +1,77 @@
-<div class="container-form" data-questions="[]">
+<div class="container-form" id="question-container" data-questions='["0"]'>
 <div class="question-1 question" data-question="0">
 <h2>De quelle type d'aide avez-vous besoin ?</h2>
 <div class="separator d-flex justify-content-center align-items-center"></div>
 <div class="btn-group-vertical">
-  <button type="button" class="btn-question" data-target="1"><%= icon('fas', 'heart') %>    Santé</button>
+  <button type="button" class="btn-question" data-target="1"><%= icon('fas', 'heart') %>Santé</button>
   <button type="button" class="btn-question" data-target="2"><%= icon('fas', 'hands-helping') %>    Aide à la personne</button>
   <button type="button" class="btn-question" data-target="3"> <%= icon('fas', 'utensils') %>   Alimentaire</button>
   <button type="button" class="btn-question" data-target="4"><%= icon('fas', 'running') %>    Culture / Loisirs</button>
+  <%= link_to "Retournez à l'index", assos_path %>
 </div>
 </div>
 
 <div class="question-2">
 <div class="question-2-1 hidden question" data-question="1" >
 <h2>De quelle type d'aide avez-vous besoin ?</h2>
+<div class="separator d-flex justify-content-center align-items-center"></div>
 <div class="btn-group-vertical">
-  <button type="button" class="btn-question" data-target="">Maladie</button>
-  <button type="button" class="btn-question" id="question-2-1-2">Mutuelle</button>
-  <button type="button" class="btn-question" id="question-2-1-3">Nutrition</button>
-  <button type="button" class="btn-question" id="question-2-1-4">Bien-être</button>
-  <button type="button" class="btn-question" id="question-2-1-5">Déces</button>
-  <button type="button" class="btn-question" id="question-2-1-6">Complémentaire</button>
-  <button type="button" class="btn-back" id="question-1"><%= icon('fas', 'step-backward') %> Question précédente</button> 
+  <button type="button" class="btn-question" data-target="5">Maladie</button>
+  <button type="button" class="btn-question" data-target="5">Mutuelle</button>
+  <button type="button" class="btn-question" data-target="5">Nutrition</button>
+  <button type="button" class="btn-question" data-target="5">Bien-être</button>
+  <button type="button" class="btn-question" data-target="5">Déces</button>
+  <button type="button" class="btn-question" data-target="5">Complémentaire</button>
+  <button type="button" class="btn-back"><%= icon('fas', 'step-backward') %> Question précédente</button> 
 </div>
 </div>
 
 <div class="question-2-2 hidden question" data-question="2" >
 <h2>De quelle type d'aide avez-vous besoin ?</h2>
+<div class="separator d-flex justify-content-center align-items-center"></div>
 <div class="btn-group-vertical">
-  <button type="button" class="btn-question">Aide à domicile</button>
-  <button type="button" class="btn-question">Soin</button>
-  <button type="button" class="btn-question">Mobilité</button>
-  <button type="button" class="btn-question">Lien social</button>
-  <button type="button" class="btn-question">Service</button>
-  <button type="button" class="btn-question">Personne âgée</button>
+  <button type="button" class="btn-question" data-target="5">Aide à domicile</button>
+  <button type="button" class="btn-question" data-target="5">Soin</button>
+  <button type="button" class="btn-question" data-target="5">Mobilité</button>
+  <button type="button" class="btn-question" data-target="5">Lien social</button>
+  <button type="button" class="btn-question" data-target="5">Service</button>
+  <button type="button" class="btn-question" data-target="5">Personne âgée</button>
+  <button type="button" class="btn-back"><%= icon('fas', 'step-backward') %> Question précédente</button> 
 </div>
-<button type="button" class="btn-direction">Précédent</button> 
 </div>
 
 <div class="question-2-3 hidden question" data-question="3">
 <h2>De quelle type d'aide avez-vous besoin ?</h2>
+<div class="separator d-flex justify-content-center align-items-center"></div>
 <div class="btn-group-vertical">
-  <button type="button" class="btn-question">Bon d'achat</button>
-  <button type="button" class="btn-question">Paniers</button>
-  <button type="button" class="btn-question">Dons</button>
-  <button type="button" class="btn-question">Tickets restaurants</button>
-  <button type="button" class="btn-question">Entraide</button>
+  <button type="button" class="btn-question" data-target="5">Bon d'achat</button>
+  <button type="button" class="btn-question" data-target="5">Paniers</button>
+  <button type="button" class="btn-question" data-target="5">Dons</button>
+  <button type="button" class="btn-question" data-target="5">Tickets restaurants</button>
+  <button type="button" class="btn-question" data-target="5">Entraide</button>
+  <button type="button" class="btn-back"><%= icon('fas', 'step-backward') %> Question précédente</button> 
 </div>
-<button type="button" class="btn-direction">Précédent</button> 
 </div>
 
 <div class="question-2-4 hidden question" data-question="4">
 <h2>De quelle type d'aide avez-vous besoin ?</h2>
+<div class="separator d-flex justify-content-center align-items-center"></div>
 <div class="btn-group-vertical">
-  <button type="button" class="btn-question">Sport</button>
-  <button type="button" class="btn-question">Vacances</button>
-  <button type="button" class="btn-question">Musée</button>
-  <button type="button" class="btn-question">Activité</button>
-  <button type="button" class="btn-question">Réduction</button>  
-  <button type="button" class="btn-question">Cours</button> 
+  <button type="button" class="btn-question" data-target="5">Sport</button>
+  <button type="button" class="btn-question" data-target="5">Vacances</button>
+  <button type="button" class="btn-question" data-target="5">Musée</button>
+  <button type="button" class="btn-question" data-target="5" >Activité</button>
+  <button type="button" class="btn-question" data-target="5">Réduction</button>  
+  <button type="button" class="btn-question" data-target="5">Cours</button> 
+  <button type="button" class="btn-back"><%= icon('fas', 'step-backward') %> Question précédente</button> 
 </div>
-<button type="button" class="btn-direction">Précédent</button> 
-</div>
-
 </div>
 
-<div class="question-3 hidden question" >
-<h2>De quelle type d'aide avez-vous besoin ?</h2>
+</div>
+
+<div class="question-3">
+<div class="question-3 hidden question" data-question="5" >
+<h2>Localiser ma recherhe</h2>
 <select class="custom-select custom-select-lg mb-3">
   <option selected id="selected-option">Toute la région</option>
   <option value="1">Paris (75)</option>
@@ -77,5 +83,7 @@
   <option value="8">Val-de-Marne (94)</option>
   <option value="9">Val-d'Oise (95)</option>
 </select>
+<button type="button" class="btn-back"><%= icon('fas', 'step-backward') %> Question précédente</button> 
+</div>
 </div>
 </div>
