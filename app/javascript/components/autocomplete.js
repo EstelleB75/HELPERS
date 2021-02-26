@@ -1,15 +1,13 @@
 import 'js-autocomplete/auto-complete.css';
 import autocomplete from 'js-autocomplete';
 
-const autocompleteSearch = function() {
-  console.log('hello')
-  const assos = JSON.parse(document.getElementById('search-data').dataset.assos)
-  console.log(assos)
+const autocompleteSearch = () => {
+  const data = document.getElementById('search-data').dataset.assos
+  const assos = JSON.parse(data)
+
   const searchInput = document.getElementById('query');
-  console.log(searchInput)
 
   if (assos && searchInput) {
-    console.log('init')
     new autocomplete({
       selector: searchInput,
       minChars: 1,
