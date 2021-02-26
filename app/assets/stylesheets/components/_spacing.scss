@@ -65,6 +65,11 @@
   border-bottom-right-radius: 10px;
 }
 
+.demi-rounded-up {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
 .search-rounded {
   border-radius: 58px;
 }
@@ -82,7 +87,12 @@
 
 .custom-size {
   width: 700px;
-  height: 160px;
+  height: 170px;
+}
+
+.custom-border {
+  border: 1px solid transparent !important;
+  box-shadow: 3px 4px 10px 0px rgba(0, 0, 0, 0.1); 
 }
 
 .search {
@@ -99,10 +109,6 @@
 
 .bolder-text {
   font-weight: 700;
-}
-
-.custom-border {
-  border: 2px solid #EBEBEB;
 }
 
 .custom-bg {
@@ -126,4 +132,8 @@
 .helpers-icons i {
   font-size: 32px;
   margin: 5px;
+}
+
+.h2-bold h2 {
+  font-weight: bold;
 }

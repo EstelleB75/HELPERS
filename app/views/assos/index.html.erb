@@ -1,26 +1,25 @@
 <div class="py-5vh background-pink px-5vw">
-  <div class="text-center py-5vh w-100 px-5vw bg-white helpers-rounded">
+  <div class="text-center py-5vh w-100 px-5vw bg-white helpers-rounded h2-bold">
     <h2>Faites vous aider</h2>
-    <br>
       <div class="separator d-flex justify-content-center align-items-center"></div>
       <br>
     <p class="text-muted">Trouvons ensemble le chemin vers la solution</p>
     <br>
       <div class="row d-flex justify-content-between mx-0 py-5">
-        <div class="col-3 d-flex flex-column justify-content-center align-items-center rounded">
-          <div style="background-image: url('https://images.unsplash.com/photo-1508847154043-be5407fcaa5a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1'); height: 300px; background-size: cover; background-position: center; width: 100%;"></div>
+        <div class="col-3 d-flex flex-column justify-content-center align-items-center">
+          <div class="demi-rounded-up" style="background-image: url('https://images.unsplash.com/photo-1508847154043-be5407fcaa5a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1'); height: 300px; background-size: cover; background-position: center; width: 100%;"></div>
             <div class="d-flex w-100 justify-content-center align-items-center helpers-green demi-rounded p-3">
               <%= link_to "Solidarité", solidarite_path %>
             </div>
         </div>
         <div class="col-4 d-flex flex-column justify-content-center align-items-center rounded">
-          <div style="background-image: url('https://images.unsplash.com/photo-1604604557577-4e27a33e57da?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1'); height: 300px; background-size: cover; background-position: center; width: 100%;"></div>
+          <div class="demi-rounded-up" style="background-image: url('https://images.unsplash.com/photo-1604604557577-4e27a33e57da?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1'); height: 300px; background-size: cover; background-position: center; width: 100%;"></div>
             <div class="d-flex w-100 justify-content-center align-items-center helpers-red demi-rounded p-3">
               <%= link_to "Assistance", assistance_path %>
             </div>
         </div>
         <div class="col-3 d-flex flex-column justify-content-center align-items-center rounded">
-          <div style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1'); height: 300px; background-size: cover; background-position: center; width: 100%;"></div>
+          <div class="demi-rounded-up" style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1'); height: 300px; background-size: cover; background-position: center; width: 100%;"></div>
             <div class="d-flex w-100 justify-content-center align-items-center helpers-yellow demi-rounded p-3">
               <%= link_to "Financier", financier_path %>
             </div>
@@ -37,7 +36,7 @@
     <%= form_tag assos_path, class: "d-flex justify-content-center align-items-center", method: :get do %>
       <%= text_field_tag :query,
         params[:query],
-        class: "form-control search-rounded search d-flex justify-content-center align-items-center w-500 position-relative",
+        class: "form-control search-rounded custom-border search d-flex justify-content-center align-items-center w-500 position-relative",
         placeholder: "Rechercher une association"
       %>
       <%= button_tag do %>
@@ -51,7 +50,7 @@
         <div class="w-50 my-3 d-flex justify-content-center align-items-center">
           <div class="asso-card d-flex justify-content-start custom-rounded custom-size" style="box-shadow: 4px 4px 14px rgba(0,0,0,0.1);">
             <% if asso.photo.attached? %>
-              <%= cl_image_tag asso.photo.key, class: "custom-rounded-left", height: 160, width: 150, crop: :fill %>
+              <%= cl_image_tag asso.photo.key, class: "custom-rounded-left", height: 170, width: 150, crop: :fill %>
             <% else %>
               <div class="custom-rounded">
                 <%= image_tag 'building-2696768_960_720.png'%>
