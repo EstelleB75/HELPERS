@@ -35,9 +35,10 @@
   <br>
   <br>
     <%= form_tag assos_path, class: "d-flex justify-content-center align-items-center", method: :get do %>
-    <div id="search-data" data-skills="<%= @assos.to_json %>"> 
+    <div id="search-data" class="form-search search-data" data-assos="<%= @assos_name.to_json %>"> 
         <%= text_field_tag :query,
           params[:query],
+          autocomplete: :off,
           class: "form-control search-rounded search d-flex justify-content-center align-items-center w-500 position-relative",
           placeholder: "Rechercher une association"
         %>

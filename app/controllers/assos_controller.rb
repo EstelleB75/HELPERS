@@ -1,5 +1,6 @@
 class AssosController < ApplicationController
   def index
+    @assos_name = Asso.pluck(:name).sort
     if params[:query].present?
       sql_query = "name ILIKE :query"
       @assos = policy_scope(Asso.where(sql_query, query: "%#{params[:query]}%"))
