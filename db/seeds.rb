@@ -37,7 +37,6 @@ tags = {
 
 categories.each do |cat|
     category = Category.create!(name: cat[:cat])
-
     cat[:sub_cat].each do |subcat|
         subcategory = category.sub_categories.create!(name: subcat)
         if tags[subcat]
@@ -48,20 +47,14 @@ categories.each do |cat|
     end
 end
 
-
-
-
 def set_asso(name, url, city, description)
     file = URI.open(url)
-
     asso = Asso.new(
         name: name,
         city: city,
         description: description,
         )
-
     AssociationTag.create!(asso: asso, tag: Tag.first)
-
     asso.photo.attach(io: file, filename: 'image.png')
     asso.save!
 end
