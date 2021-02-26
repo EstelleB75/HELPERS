@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'financier', to: 'searchs#financier'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get 'dashboard', to: 'dashboards#profile'
+  get 'results_asso', to: 'assos#results'
 
   resources :assos do
     resources :favs, only: [ :new, :create ]

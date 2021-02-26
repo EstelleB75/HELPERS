@@ -54,7 +54,7 @@ def set_asso(name, url, city, description)
         city: city,
         description: description,
         )
-    AssociationTag.create!(asso: asso, tag: Tag.first)
+
     asso.photo.attach(io: file, filename: 'image.png')
     asso.save!
 end
@@ -103,7 +103,10 @@ associations.each do |asso|
     set_asso(asso[:name], asso[:photo], asso[:city], asso[:description])
 end
 
-
+# on fake un association tag pour les 8 premières associations, et le tag lien social, pour la démo mais pas en vrai    
+Asso.first(8).each do |asso|
+    p AssociationTag.create!(asso: asso, tag: Tag.find_by(name: "Lien social"))
+end
 
 
 
