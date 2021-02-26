@@ -26,6 +26,7 @@ const handleForm = () => {
   buttons.forEach((button) => {
     button.addEventListener("click", (event) => {
       const questionNumber = event.target.dataset.target
+      console.log(event.target.dataset.id)
       const container = document.querySelector("#question-container")
       const history =  JSON.parse(container.dataset.questions)
       history.push(questionNumber)

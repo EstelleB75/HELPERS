@@ -54,12 +54,13 @@ def set_asso(name, url, city, description)
         city: city,
         description: description,
         )
-    AssociationTag.create!(asso: asso, tag: Tag.first)
+
     asso.photo.attach(io: file, filename: 'image.png')
     asso.save!
 end
 
 associations = [
+    {name: "ADMR", photo: "https://www.bainssuroust.fr/medias/2020/03/ADMR_baseline_JPG-scaled.jpg", city: "Paris", description: "Service d'aide à la personne"},
     {name: "Les Restos du coeur", photo: "https://causeaeffet.com/wp-content/uploads/2019/11/resto-du-coeur-logo.jpg", city: "Paris", description: "Les Restos ont pour but « d'aider et d'apporter une assistance bénévole aux personnes démunies, notamment dans le domaine alimentaire par l'accès à des repas gratuits"},
     {name: "Emmaüs", photo: "https://upload.wikimedia.org/wikipedia/fr/thumb/4/4d/Logo_EF_Couleur.svg/1200px-Logo_EF_Couleur.svg.png", city: "Paris", description: "Fidèle à la volonté de l'abbé Pierre, Emmaüs est devenu à la fois une fabrique d'innovations sociales et de solidarités pour aider des publics en situation de grande précarité"},
     {name: "Je t'aide", photo: "https://associationjetaide.org/wp-content/uploads/2020/07/logo-jetaide-scaled.jpg", city: "Paris", description: "Luttons contre l'isolement social des aidant.es !"},
@@ -103,7 +104,10 @@ associations.each do |asso|
     set_asso(asso[:name], asso[:photo], asso[:city], asso[:description])
 end
 
-
+# on fake un association tag pour les 8 premières associations, et le tag lien social, pour la démo mais pas en vrai    
+Asso.first(8).each do |asso|
+    p AssociationTag.create!(asso: asso, tag: Tag.find_by(name: "Lien social"))
+end
 
 
 

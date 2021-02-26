@@ -1,13 +1,13 @@
-<div class="container-form" id="question-container" data-questions='["0"]'>
+<div class="container-form" id="question-container" data-questions='["0"]' data-category="<%= Category.find_by(name: "Solidarité").id %>" data-sub-category="<%= SubCategory.find_by(name: 'ALP').id %>" data-tags="<%= Tag.find_by(name: "Lien social").id %>">
 <div class="question-1 question" data-question="0">
-<h2>De quelle type d'aide avez-vous besoin ?</h2>
+<h2>À quelle catégorie est lié mon besoin ?</h2>
 <div class="separator d-flex justify-content-center align-items-center"></div>
 <div class="btn-group-vertical">
-  <button type="button" class="btn-question" data-target="1"><%= icon('fas', 'heart') %>Santé</button>
-  <button type="button" class="btn-question" data-target="2"><%= icon('fas', 'hands-helping') %>    Aide à la personne</button>
-  <button type="button" class="btn-question" data-target="3"> <%= icon('fas', 'utensils') %>   Alimentaire</button>
-  <button type="button" class="btn-question" data-target="4"><%= icon('fas', 'running') %>    Culture / Loisirs</button>
-  <%= link_to "Retournez à l'index", assos_path %>
+  <button type="button" class="btn-question" data-id="<%= SubCategory.find_by(name: "Santé").id %>" data-target="1"><%= icon('fas', 'heart') %> Santé</button>
+  <button type="button" class="btn-question" data-id="<%= SubCategory.find_by(name: "ALP").id %>" data-target="2"><%= icon('fas', 'hands-helping') %> Aide à la personne</button>
+  <button type="button" class="btn-question" data-id="<%= SubCategory.find_by(name: "Alimentaire").id %>" data-target="3"> <%= icon('fas', 'utensils') %> Alimentaire</button>
+  <button type="button" class="btn-question" data-id="<%= SubCategory.find_by(name: "Culture&Loisirs").id %>" data-target="4"><%= icon('fas', 'running') %> Culture / Loisirs</button>
+  <%= link_to "Retourner à la page d'acceuil", assos_path %>
 </div>
 </div>
 
@@ -83,7 +83,11 @@
   <option value="8">Val-de-Marne (94)</option>
   <option value="9">Val-d'Oise (95)</option>
 </select>
+<div class="btn-align">
 <button type="button" class="btn-back"><%= icon('fas', 'step-backward') %> Question précédente</button> 
+<%= link_to "Voir les résultats", results_asso_path  %>
 </div>
 </div>
 </div>
+</div>
+
