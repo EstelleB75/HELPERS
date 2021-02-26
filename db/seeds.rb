@@ -7,6 +7,7 @@ require 'open-uri'
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+AssociationTag.destroy_all
 Asso.destroy_all
 Tag.destroy_all
 SubCategory.destroy_all
@@ -36,7 +37,6 @@ tags = {
 
 categories.each do |cat|
     category = Category.create!(name: cat[:cat])
-
     cat[:sub_cat].each do |subcat|
         subcategory = category.sub_categories.create!(name: subcat)
         if tags[subcat]
@@ -47,18 +47,14 @@ categories.each do |cat|
     end
 end
 
-
-
-
 def set_asso(name, url, city, description)
     file = URI.open(url)
-    
     asso = Asso.new(
         name: name,
         city: city,
         description: description,
         )
-        
+    AssociationTag.create!(asso: asso, tag: Tag.first)
     asso.photo.attach(io: file, filename: 'image.png')
     asso.save!
 end
