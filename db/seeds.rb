@@ -7,6 +7,7 @@ require 'open-uri'
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+AssociationTag.destroy_all
 Asso.destroy_all
 Tag.destroy_all
 SubCategory.destroy_all
@@ -14,7 +15,7 @@ Category.destroy_all
 
 
 categories = [
-    { cat: "Solidarité", sub_cat: %w{Santé Alimentaire ALP Culture&Loisirs} }, 
+    { cat: "Solidarité", sub_cat: %w{Santé Alimentaire ALP Culture&Loisirs} },
     { cat: "Assistance", sub_cat: %w{Harcelement Violences Abus} },
     { cat: "Financier", sub_cat: %w{Emploi Logement Transport Formation&Education Juridique} }
 ]
@@ -36,7 +37,6 @@ tags = {
 
 categories.each do |cat|
     category = Category.create!(name: cat[:cat])
-
     cat[:sub_cat].each do |subcat|
         subcategory = category.sub_categories.create!(name: subcat)
         if tags[subcat]
@@ -47,22 +47,18 @@ categories.each do |cat|
     end
 end
 
-
-
-
 def set_asso(name, url, city, description)
     file = URI.open(url)
-    
     asso = Asso.new(
         name: name,
         city: city,
         description: description,
         )
-        
+    AssociationTag.create!(asso: asso, tag: Tag.first)
     asso.photo.attach(io: file, filename: 'image.png')
     asso.save!
 end
-    
+
 associations = [
     {name: "Les Restos du coeur", photo: "https://causeaeffet.com/wp-content/uploads/2019/11/resto-du-coeur-logo.jpg", city: "Paris", description: "Les Restos ont pour but « d'aider et d'apporter une assistance bénévole aux personnes démunies, notamment dans le domaine alimentaire par l'accès à des repas gratuits"},
     {name: "Emmaüs", photo: "https://upload.wikimedia.org/wikipedia/fr/thumb/4/4d/Logo_EF_Couleur.svg/1200px-Logo_EF_Couleur.svg.png", city: "Paris", description: "Fidèle à la volonté de l'abbé Pierre, Emmaüs est devenu à la fois une fabrique d'innovations sociales et de solidarités pour aider des publics en situation de grande précarité"},
