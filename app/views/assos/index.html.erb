@@ -34,7 +34,7 @@
   <br>
   <br>
     <%= form_tag assos_path, class: "d-flex justify-content-center align-items-center", method: :get do %>
-    <div id="search-data" class="form-search search-data" data-assos="<%= @assos_name.to_json %>"> 
+    <div id="search-data" class="d-flex form-search search-data" data-assos="<%= @assos_name.to_json %>"> 
         <%= text_field_tag :query,
           params[:query],
           autocomplete: :off,
@@ -51,41 +51,41 @@
     <div class="d-flex flex-wrap flex-row justify-content-center align-items-center">
       <% @assos.each do |asso| %>
         <div class="w-50 my-3 d-flex justify-content-center align-items-center">
-          <div class="asso-card d-flex justify-content-start custom-rounded custom-size" style="box-shadow: 4px 4px 14px rgba(0,0,0,0.1);">
-            <% if asso.photo.attached? %>
-              <%= cl_image_tag asso.photo.key, class: "custom-rounded-left", height: 170, width: 150, crop: :fill %>
-            <% else %>
-              <div class="custom-rounded">
-                <%= image_tag 'building-2696768_960_720.png'%>
-              </div>
-            <% end %>
-            <div class="d-flex flex-column px-4 py-3">
-              <div class="font-16">
-                <%= link_to asso.name, asso_path(asso), class: "text-left" %>
-              </div>
-              <div class="font-16">
-                <%= asso.description.truncate(120) %>
-              </div>
-              <%= asso.address %>
-              <div class="mt-auto d-flex justify-content-start flex-row p-1">
-                <div class="pr-3"><%= icon 'fas', 'city' %> <%= asso.city %></div>
-                <div class="pr-3"><%= icon 'far', 'envelope' %> <%= asso.email%></div>
-                <div class="pr-3"><%= icon 'fas', 'at' %> <%= link_to "Site web", asso.website%></div>
-                <div class="pr-3"><%= icon 'fas', 'phone' %> <%= asso.phone_number%></div>
-                <% if current_user.favorites?(asso) %>
-                  <%= link_to fav_path(Fav.find_by(asso: asso, user: current_user)), method: :delete do %>
-                    <%= icon 'fas', 'heart' %>
-                  <% end %>
-                <% else %>
-                  <%= link_to asso_favs_path(asso), method: :post do %>
-                    <%= icon 'far', 'heart' %>
-                  <% end %>
+            <div class="asso-card d-flex justify-content-start custom-rounded custom-size" style="box-shadow: 4px 4px 14px rgba(0,0,0,0.1);">
+              <% if asso.photo.attached? %>
+                <%= cl_image_tag asso.photo.key, class: "custom-rounded-left", height: 170, width: 150, crop: :fill %>
+              <% else %>
+                <div class="custom-rounded">
+                  <%= image_tag 'building-2696768_960_720.png'%>
+                </div>
+              <% end %>
+              <div class="d-flex flex-column px-4 py-3">
+                <div class="font-22">
+                  <%= link_to asso.name, asso_path(asso), class: "text-left" %>
+                </div>
+                <div class="font-16">
+                  <%= asso.description.truncate(120) %>
+                </div>
+                <%= asso.address %>
+                <div class="mt-auto d-flex justify-content-start flex-row p-1">
+                  <div class="pr-3"><%= icon 'fas', 'city' %> <%= asso.city %></div>
+                  <div class="pr-3"><%= icon 'far', 'envelope' %> <%= asso.email%></div>
+                  <div class="pr-3"><%= icon 'fas', 'at' %> <%= link_to "Site web", asso.website%></div>
+                  <div class="pr-3"><%= icon 'fas', 'phone' %> <%= asso.phone_number%></div>
+                  <% if current_user.favorites?(asso) %>
+                    <%= link_to fav_path(Fav.find_by(asso: asso, user: current_user)), method: :delete do %>
+                      <%= icon 'fas', 'heart' %>
+                    <% end %>
+                  <% else %>
+                    <%= link_to asso_favs_path(asso), method: :post do %>
+                      <%= icon 'far', 'heart' %>
+                    <% end %>
                 <% end %>
               </div>
             </div>
           </div>
         </div>
-      <% end %>
+        <% end %>
     </div>
   </div>
 
