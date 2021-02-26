@@ -34,14 +34,17 @@
   <br>
   <br>
     <%= form_tag assos_path, class: "d-flex justify-content-center align-items-center", method: :get do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control search-rounded custom-border search d-flex justify-content-center align-items-center w-500 position-relative",
-        placeholder: "Rechercher une association"
-      %>
-      <%= button_tag do %>
-        <%= icon 'fas', 'search' %>
-      <% end %>
+    <div id="search-data" class="form-search search-data" data-assos="<%= @assos_name.to_json %>"> 
+        <%= text_field_tag :query,
+          params[:query],
+          autocomplete: :off,
+          class: "form-control search-rounded search d-flex justify-content-center align-items-center w-500 position-relative",
+          placeholder: "Rechercher une association"
+        %>
+        <%= button_tag do %>
+          <%= icon 'fas', 'search' %>
+        <% end %>
+    </div>
     <% end %>
 
   <div class="asso-cards m-5">
