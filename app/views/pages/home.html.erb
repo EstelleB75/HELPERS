@@ -1,13 +1,14 @@
-<div class="home-container d-flex flex-row justify-content-center align-items-center h-100">
-  <div class="w-50 h-100">
-    <div class="helpers-home d-flex flex-column justify-content-center align-items-center vh-100">
-      <%= image_tag('logo.png') %>
-      <h1>Helpers</h1>
-      <p>Besoin d'aide ?</p>
-      <%= link_to "C'est parti !", assos_path %>
+<div class="home-container d-flex flex-row align-items-center h-100">
+    <div class="helpers-home flex-column align-items-center vh-100">
+      <div class="left-home">
+         <%= image_tag('logo.png') %>
+        <h1>Helpers</h1>
+        <p>Si une solution existe, <br> vous la trouverez ici</p>
+        <%= link_to "Je trouve", assos_path %>
+      </div>
+      <div>
+        <%= video_tag "helpers.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, class: "home_video" %>
+      </div>
     </div>
-  </div>
-  <div class="w-50 h-100 helpers-image vh-100">
-  </div>
 </div>
 
