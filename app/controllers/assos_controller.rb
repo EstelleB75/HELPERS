@@ -9,6 +9,11 @@ class AssosController < ApplicationController
     end
   end
 
+  def results
+    policy_scope(Asso)
+    @assos = AssociationTag.all.map { |asso_tag| Asso.find(asso_tag.asso.id) }
+  end
+
   def show
     @asso = Asso.find(params[:id])
     authorize @asso
