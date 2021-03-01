@@ -13,7 +13,7 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
 
-  <body>
+  <body class="<%= "bodycolor" unless current_page?(root_path) %>">
 
 
     <%= render 'shared/navbar' unless @disable_nav%>
