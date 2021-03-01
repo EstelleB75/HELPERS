@@ -5,12 +5,47 @@
   width: 600px;
   margin-left: 36px;
 }
-.helpers-home h1
-{
+.homescreen{
+  display: flex;
+  .homebox {
+    margin: 3px;
+    padding: 35px;
+    width: 35%;
+    background-color: #f9e7e6;
+    color: #0b1c2d;
+    h2 {
+      margin-bottom: 20px;
+      margin-left: 26px;
+      margin-top: 50px;
+    }
+    p {
+      margin-left: 26px;
+    }
+  }
+  .homedescritpion {
+    background-color: #f5f1ef;
+    width: 65%;
+    .hometext {
+      margin-left: 164px;
+      margin-top: 71px;
+      margin-bottom: 70px;
+    }
+    h2 {
+      font-size: 25px;
+    }
+
+  }
+}
+
+.fas {
+  font-size: 24px;
+}
+
+.helpers-home h1 {
   font-weight: 900 !important;
   font-size: 52px;
   text-align: left;
-  margin-top: 300px;
+  margin-top: 179px;
   margin-left: 20px;
   color: #0B1B2D;
 }
@@ -18,7 +53,7 @@
 .helpers-home p
 {
   font-weight: 700 !important;
-  font-size: 33px;
+  font-size: 25px;
   text-align: left;
   margin-left: 23px;
   color: #0B1B2D;
@@ -33,15 +68,15 @@
   text-align: center;
   border: 1px solid #f9e7e6;
   border-radius: 10px;
-  background-color: #f9e7e6;
-  color: #0B1B2D;
+  background-color: #0B1B2D;
+  color: #f5f1ef;
   font-size: 22px;
 }
 
 .helpers-home img
 {
   height: 75px;
-  margin-left: -23px;
+  margin-left: 8px;
 }
 
 .helpers-home a:hover
