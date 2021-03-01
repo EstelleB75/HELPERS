@@ -11,7 +11,7 @@
     <div class="asso-cards m-5">
       <div class="d-flex flex-wrap flex-row justify-content-center align-items-center">
       <% current_user.favs.each do |fav| %>
-          <div class="w-50 my-3 d-flex justify-content-center align-items-center">
+          <div data-controller="fav" data-fav-target="card" class="w-50 my-3 d-flex justify-content-center align-items-center">
             <div class="asso-card d-flex justify-content-start custom-rounded custom-size bg-white" style="box-shadow: 4px 4px 14px rgba(0,0,0,0.1);">
               <% if fav.asso.photo.attached? %>
                 <%= cl_image_tag fav.asso.photo.key, class: "custom-rounded-left", height: 170, width: 150, crop: :fill %>
@@ -33,9 +33,11 @@
                   <div class="pr-3"><%= icon 'far', 'envelope' %> <%= fav.asso.email%></div>
                   <div class="pr-3"><%= icon 'fas', 'at' %> <%= link_to "Site web", fav.asso.website%></div>
                   <div class="pr-3"><%= icon 'fas', 'phone' %> <%= fav.asso.phone_number%></div>
-                    <%= link_to fav_path(fav, source: "dashboard"), method: :delete do %>
-                      <%= icon 'fas', 'heart' %>
+                  <div>
+                    <%= link_to fav_path(fav), data: {action: 'click->fav#destroy'}, method: :delete, remote: true do %>
+                      <%= icon 'fas', 'heart', data: {'fav-target': 'icon'} %>
                     <% end %>
+                  </div>
                 </div>
               </div>
             </div>
