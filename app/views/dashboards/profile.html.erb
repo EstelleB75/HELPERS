@@ -23,8 +23,8 @@
                   </div>
                 <% end %>
                 <div class="d-flex flex-column px-4 py-3">
-                  <div class="font-22">
-                    <%= link_to fav.asso.name, asso_path(fav.asso), class: "text-left" %>
+                  <div class="font-20 important">
+                    <%= link_to fav.asso.name, asso_path(fav.asso), class: "text-left a-without-color" %>
                   </div>
                   <div class="font-16">
                     <%= fav.asso.description.truncate(120) %>
