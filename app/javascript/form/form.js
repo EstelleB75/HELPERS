@@ -1,5 +1,5 @@
 // Poser un micro sur le clic
-const hideAllQuestions = () => {
+/* const hideAllQuestions = () => {
   const hide = document.querySelectorAll(".question")
   hide.forEach((question) => {
     question.classList.add("hidden")
@@ -43,5 +43,5 @@ const handleForm = () => {
     })
   })
 }
-export {handleForm}
+export {handleForm} */
 // Enelever la classe "hidden" de la question 
