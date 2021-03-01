@@ -7,7 +7,11 @@
 
 
   <h3>Mes favoris</h3>
-
+<% if current_user.favs.empty? %>
+<div class="empty-favs">
+<p>Vous n’avez pas encore d’associations en favoris. Pour ajouter en ajouter à votre liste, cliquez sur l’icône <%= icon 'fas', 'heart', class: "heart" %> présente sur les fiches.</p>
+</div>
+<% else %>
     <div class="asso-cards m-5">
       <div class="d-flex flex-wrap flex-row justify-content-center align-items-center">
       <% current_user.favs.each do |fav| %>
@@ -38,17 +42,18 @@
                       <%= icon 'fas', 'heart', data: {'fav-target': 'icon'} %>
                     <% end %>
                   </div>
+
                 </div>
               </div>
             </div>
           </div>
         <% end %>
+  <% if current_user.admin? %>
+    <%= link_to "Créer une asso", new_asso_path %>
+  <% end %>
       </div>
     </div>
 
 
-  <% if current_user.admin? %>
-    <%= link_to "Créer une asso", new_asso_path %>
-  <% end %>
         </div>
 </div>
