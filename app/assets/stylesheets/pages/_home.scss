@@ -5,10 +5,17 @@
   width: 600px;
   margin-left: 36px;
 }
-.homescreen{
+
+// gneugneu
+
+.homefooter {
+  background-color: #0b1c2d;
+}
+
+.homescreen {
   display: flex;
   .homebox {
-    margin: 3px;
+    margin: 5px;
     padding: 35px;
     width: 35%;
     background-color: #f9e7e6;
@@ -29,11 +36,17 @@
       margin-left: 164px;
       margin-top: 71px;
       margin-bottom: 70px;
+      a {
+        text-decoration: none;
+        color: #0b1c2d;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
     h2 {
       font-size: 25px;
     }
-
   }
 }
 

@@ -1,5 +1,5 @@
 <div class="py-10vh background-pink px-5vw d-flex flex-column">
-  <div class="text-center py-vh w-100 px-5vw bg-white helpers-rounded h2-bold p-3">
+  <div id="homeheader" class="text-center py-vh w-100 px-5vw bg-white helpers-rounded h2-bold p-3">
     <h2>Helpers vous connecte</h2>
       <div class="separator d-flex justify-content-center align-items-center"></div>
       <br>
@@ -28,13 +28,13 @@
         <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic1.squarespace.com%2Fstatic%2F57bfc190f7e0abe0fdcd221f%2Ft%2F58afc451cd0f682385135074%2F1499409789305%2FArrow%2Bfor%2BPage%2B1_1.gif&f=1&nofb=1" class="d-flex justify-content-center align-self-center img-size">
 </div>
 
-<div class="bg-white index-display pt-5">
+<div id="barrederecherche" class="bg-white index-display pt-5">
   <h2 class="text-center bolder-text p-3">Toutes nos associations</h2>
   <div class="separator d-flex justify-content-center align-items-center"></div>
   <br>
   <br>
     <%= form_tag assos_path, class: "d-flex justify-content-center align-items-center", method: :get do %>
-    <div id="search-data" class="d-flex form-search search-data" data-assos="<%= @assos_name.to_json %>"> 
+    <div id="search-data" class="d-flex form-search search-data" data-assos="<%= @assos_name.to_json %>">
         <%= text_field_tag :query,
           params[:query],
           autocomplete: :off,
