@@ -12,6 +12,7 @@
     <div>
       <%= video_tag "helpers.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, class: "home_video" %>
     </div>
+  </div>
 </div>
 
 <div class="home-screen">
@@ -21,17 +22,17 @@
       Avec plus d'1 million d'associations<br>et d'organismes de soutien en France,<br>il y a une solution qui vous attend.
     </p>
   </div>
-  <div class="home-descritpion">
+  <div class="home-description">
     <div class="home-text">
-      <%= link_to assos_path(anchor: "homeheader") do  %>
+      <%= link_to assos_path(anchor: "home-header") do  %>
       <h2><i class="fas fa-chevron-right"></i> Laissez-vous guider</h2>
         <p>Des solutions personnalisées en quelques questions</p>
         <% end %>
-        <%= link_to assos_path(anchor: "barrederecherche") do  %>
+        <%= link_to assos_path(anchor: "barre-de-recherche") do  %>
       <h2><i class="fas fa-chevron-right"></i> Parcourez toutes les aides</h2>
         <p>Un répertoire des aides et organismes disponibles</p>
         <% end %>
-        <%= link_to assos_path(anchor: "barrederecherche") do  %>
+        <%= link_to assos_path(anchor: "barre-de-recherche") do  %>
       <h2><i class="fas fa-chevron-right"></i> Organisez votre recherche par thème</h2>
         <p>Un ensemble de solutions par rubrique </p>
       <% end %>
