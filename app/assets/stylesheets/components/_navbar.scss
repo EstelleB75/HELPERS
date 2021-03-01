@@ -23,3 +23,14 @@
 .navbar-toggler {
   // display: block !important;
 }
+
+#favorite-counter {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  margin: 2px;
+  background-color: #F9E7E6;
+  border-radius: 50px;
+  border: 1px solid #F9E7E6;
+  text-align: center;
+}

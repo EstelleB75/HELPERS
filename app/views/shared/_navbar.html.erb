@@ -8,6 +8,12 @@
     </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <% if current_user %>
+    <%= link_to dashboard_path, class: "nav-link a-without-color" do %>
+      Mes favoris<span id="favorite-counter"><%= current_user.favs&.count %></span>
+    <% end %>
+  <% end %>
+  
     <ul class="navbar-nav mr-auto ">
       <% if user_signed_in? %>
         <li class="nav-item dropdown">
