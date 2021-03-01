@@ -1,28 +1,28 @@
 <div class="home-container d-flex flex-row align-items-center h-100">
-    <div class="helpers-home flex-column align-items-center vh-100">
-      <div class="left-home">
-         <%= image_tag('logo.png') %>
-        <h1>Helpers</h1>
-        <p>Si une solution existe, <br> vous la trouverez ici</p>
-        <%= link_to "Je trouve", assos_path %>
-      </div>
-      <div>
-        <%= video_tag "helpers.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, class: "home_video" %>
-      </div>
-    </div>
 
+  <div class="helpers-home flex-column align-items-center vh-100">
+    <div class="color"></div>
+    <div class="left-home">
+      <%= image_tag('logo.png') %>
+      <h1>Helpers</h1>
+      <p>Si une solution existe, <br>
+        vous la trouverez ici</p>
+      <%= link_to "Je trouve", assos_path %>
+    </div>
+    <div>
+      <%= video_tag "helpers.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, class: "home_video" %>
     </div>
 </div>
 
-<div class="homescreen">
-  <div class="homebox">
+<div class="home-screen">
+  <div class="home-box">
     <h2>Comment nous<br>vous aidons ?</h2>
     <p>
       Avec plus d'1 million d'associations<br>et d'organismes de soutien en France,<br>il y a une solution qui vous attend.
     </p>
   </div>
-  <div class="homedescritpion">
-    <div class="hometext">
+  <div class="home-descritpion">
+    <div class="home-text">
       <%= link_to assos_path(anchor: "homeheader") do  %>
       <h2><i class="fas fa-chevron-right"></i> Laissez-vous guider</h2>
         <p>Des solutions personnalisées en quelques questions</p>
@@ -38,9 +38,9 @@
     </div>
   </div>
 </div>
+
 <div class="homeicon">
   <div class="homefooter">
 
   </div>
 </div>
-

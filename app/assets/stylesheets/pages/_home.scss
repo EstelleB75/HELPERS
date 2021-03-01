@@ -6,15 +6,13 @@
   margin-left: 36px;
 }
 
-// gneugneu
-
-.homefooter {
+.home-footer {
   background-color: #0b1c2d;
 }
 
-.homescreen {
+.home-screen {
   display: flex;
-  .homebox {
+  .home-box {
     margin: 5px;
     padding: 35px;
     width: 35%;
@@ -29,7 +27,7 @@
       margin-left: 26px;
     }
   }
-  .homedescritpion {
+  .home-description {
     background-color: #f5f1ef;
     width: 65%;
     .hometext {
@@ -50,7 +48,7 @@
   }
 }
 
-.fas {
+.fas-home {
   font-size: 24px;
 }
 
@@ -63,8 +61,7 @@
   color: #0B1B2D;
 }
 
-.helpers-home p
-{
+.helpers-home p {
   font-weight: 700 !important;
   font-size: 25px;
   text-align: left;
@@ -72,8 +69,7 @@
   color: #0B1B2D;
 }
 
-.helpers-home a
-{
+.helpers-home a {
   display: block;
   margin-left: 20px;
   width: 250px;
@@ -86,26 +82,25 @@
   font-size: 22px;
 }
 
-.helpers-home img
-{
+.helpers-home img {
   height: 75px;
   margin-left: 8px;
 }
 
-.helpers-home a:hover
-{
+.helpers-home a:hover {
   text-decoration: none;
 }
 
 .home_video {
- width: 100vw;
- height: 100vh;
- position: absolute;
- justify-content: center;
- object-fit: cover;
- top: 0;
- z-index: -2;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  justify-content: center;
+  object-fit: cover;
+  top: 0;
+  z-index: -2;
 }
+
 // .helpers-image
 // {
 //   background-image: url('https://images.unsplash.com/photo-1560252829-804f1aedf1be?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80');

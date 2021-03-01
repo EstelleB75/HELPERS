@@ -1,8 +1,10 @@
-import { Controller } from "stimulus"
+import {
+  Controller
+} from "stimulus"
 
 export default class extends Controller {
-  static targets = [ 'icon', 'card' ]
-  
+  static targets = ['icon', 'card']
+
   update() {
     const count = document.getElementById('favorite-counter');
     const value = parseInt(count.innerText);
