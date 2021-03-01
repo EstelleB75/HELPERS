@@ -39,7 +39,7 @@
         <%= text_field_tag :query,
           params[:query],
           autocomplete: :off,
-          class: "form-control search-rounded search d-flex justify-content-center align-items-center w-500 position-relative",
+          class: "form-control search-rounded search d-flex justify-content-center align-items-center w-500 position-relative quicksearch",
           placeholder: "Rechercher une association"
         %>
       <%= button_tag do %>
@@ -48,9 +48,9 @@
     </div>
   <% end %>
   <div class="asso-cards m-5">
-    <div class="d-flex flex-wrap flex-row justify-content-center align-items-center px-10vw">
+    <div class="d-flex flex-wrap flex-row justify-content-center align-items-center px-10vw grid">
       <% @assos.each do |asso| %>
-        <div class="w-50 my-3 d-flex justify-content-center align-items-center">
+        <div class="w-50 my-3 d-flex justify-content-center align-items-center element-item">
           <div class="asso-card d-flex justify-content-start custom-rounded custom-size" style="box-shadow: 4px 4px 14px rgba(0,0,0,0.1);">
             <% if asso.photo.attached? %>
               <%= cl_image_tag asso.photo.key, class: "custom-rounded-left", height: 180, width: 150, crop: :fill %>
