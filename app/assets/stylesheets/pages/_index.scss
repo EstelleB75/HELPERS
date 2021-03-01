@@ -32,3 +32,18 @@
 .a-without-color {
     color: #000 !important;
 }
+
+.iso-grid{
+    display: grid;
+}
+
+.iso-grid:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+
+.element-item{
+    position: relative;
+    float: left;
+}

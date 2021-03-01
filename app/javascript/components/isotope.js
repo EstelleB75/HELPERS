@@ -1,44 +1,29 @@
 import Isotope from 'isotope-layout'
+let queryRegexp;
+
+const filter = (itemElem) => queryRegexp ? itemElem.textContent.match(queryRegexp) : true
+
+
+const arrangeItems = (iso) => {
+    const quicksearchField = document.querySelector('.quicksearch');
+    
+    queryRegexp = new RegExp( quicksearchField.value, 'gi' );
+    iso.layout();
+    iso.arrange();
+}
 
 const isotopeInit = () => {
-    let qsRegex
-    // init Isotope
-    const grid = document.querySelector('.grid')
+    const grid = document.querySelector('.iso-grid');
+    if (!grid) return;
+
     const iso = new Isotope( grid, {
       itemSelector: '.element-item',
       layoutMode: 'fitRows',
-      filter: function() {
-        return qsRegex ? $(this).text().match( qsRegex ) : true;
-      }
+      filter: filter
     });
     
-    // use value of search field to filter
-    const quicksearchField = document.querySelector('.quicksearch')
-    const quicksearch = quicksearchField.addEventListener('keyup', () => {
-        qsRegex = new RegExp( quicksearchField.value, 'gi' );
-        iso.arrange({
-            filter: quicksearchField.value
-        })
-    });
-
-    
-    // debounce so filtering doesn't happen every millisecond
-    function debounce( fn, threshold ) {
-      var timeout;
-      threshold = threshold || 100;
-      return function debounced() {
-        clearTimeout( timeout );
-        var args = arguments;
-        var _this = this;
-        function delayed() {
-          fn.apply( _this, args );
-        }
-        timeout = setTimeout( delayed, threshold );
-      };
-    }
+    const quicksearchField = document.querySelector('.quicksearch');
+    quicksearchField.addEventListener('keyup', () => { arrangeItems(iso) });
 }
 
-export {
-    isotopeInit
-};
-
+export { isotopeInit };
