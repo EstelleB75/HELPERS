@@ -25,16 +25,16 @@
         <div id="asso-coord">
           <%= @asso.address %>
           <div>
-          <%= @asso.city %>
+            <%= @asso.city %>
           </div>
         </div >
         <div>
           <h2 id="show-tag"> Ils vous accompagnent </h2>
           <% @asso.association_tags.each do |asso_tag| %>
-          <div id="show-tagbtn" >
-            <span class="badge badge-pill badge-light"> <%= asso_tag.tag.name %> </span>
-          </div>
-        <% end %>
+            <div id="show-tagbtn" >
+              <span class="badge badge-pill badge-light"> <%= asso_tag.tag.name %> </span>
+            </div>
+          <% end %>
         </div>
         <div id="showbtn">
           <div class="btn-show">

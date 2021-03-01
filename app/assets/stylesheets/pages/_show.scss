@@ -37,13 +37,15 @@
 .btn-show {
   padding: 20px;
   box-shadow: 1px 1px 1px 1px lightgrey;
+
   a {
-   text-decoration: none;
-   color: black;
-   &:hover {
     text-decoration: none;
-   color: lightgrey;
-   }
+    color: black;
+
+    &:hover {
+      text-decoration: none;
+      color: lightgrey;
+    }
   }
 }
 
@@ -68,6 +70,6 @@
   padding-bottom: 20px;
 }
 
-.photo-show{
+.photo-show {
   width: 300px;
 }
