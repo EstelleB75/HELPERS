@@ -36,3 +36,5 @@ document.addEventListener('turbolinks:load', () => {
   handleForm()
   autocompleteSearch()
 });
+
+import "controllers"

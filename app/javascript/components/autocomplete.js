@@ -1,8 +1,10 @@
-import 'js-autocomplete/auto-complete.css';
 import autocomplete from 'js-autocomplete';
 
 const autocompleteSearch = () => {
-  const data = document.getElementById('search-data').dataset.assos
+  const searchBar = document.getElementById('search-data')
+    if (!searchBar) return;
+
+  const data = searchBar.dataset.assos
   const assos = JSON.parse(data)
 
   const searchInput = document.getElementById('query');
