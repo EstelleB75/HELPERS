@@ -1,6 +1,6 @@
 <div class="container-form">
-<%= link_to "back", search_path  %>
 <div class="input_styling bg-white p-5 m-5 d-flex justify-content-center align-items-center flex-column w-100">
+<h2>Pour plus de précision...</h2>
   <%= form_tag("/search_tag", method: :get) do %>
   <div class="d-flex flex-column">
     <% @tags.each do |tag| %>
@@ -9,8 +9,9 @@
       <%= label_tag "tag_#{tag.id}", tag.name %>
       </div>
     <% end %>
+    <div class="submit-btn">
+    <%= link_to icon('fas','step-backward'), search_path(params: { type: @sub_cat.category.name })  %>
+    <%= submit_tag "Continuer" %>
     </div>
-  <%= submit_tag "Continuer" %>
-  </div>
   <% end %>
 </div>

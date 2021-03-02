@@ -35,11 +35,11 @@
 }
 
 .helpers-green {
-  background-color: #90DFD6;
+  background-color: #90dfd6;
 }
 
 .helpers-green a {
-  color: #002903;
+  color: #f5f1ef;
   &:hover
   {
     text-decoration: none;
@@ -47,11 +47,11 @@
 }
 
 .helpers-red {
-  background-color: #C43256;
+  background-color: #c43757;
 }
 
 .helpers-red a {
-  color: #fff;
+  color: #f5f1ef;
   &:hover
   {
     text-decoration: none;
@@ -59,11 +59,11 @@
 }
 
 .helpers-yellow {
-  background-color: #FFCB67;
+  background-color: #f7ca66;
 }
 
 .helpers-yellow a {
-  color: #000022;
+  color: #f5f1ef;
   &:hover
   {
     text-decoration: none;
@@ -96,13 +96,13 @@
 }
 
 .custom-size {
-  width: 90%;
-  height: 180px;
+  width: 80%;
+  height: 320px;
 }
 
 .custom-border {
   border: 1px solid transparent !important;
-  box-shadow: 3px 4px 10px 0px rgba(0, 0, 0, 0.1); 
+  box-shadow: 3px 4px 10px 0px rgba(0, 0, 0, 0.1);
 }
 
 .search {
@@ -164,4 +164,8 @@
 
 .border-top-profile {
   border-top: 1px solid #3b3b3b !important
+}
+
+.calc {
+  height: calc(100vh - 86px);
 }
