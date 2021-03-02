@@ -63,7 +63,7 @@
                 <%= link_to asso.name, asso_path(asso), class: "text-left a-without-color" %>
               </div>
               <div class="font-16" style="color: gray;">
-                <%= asso.description %>
+                <%= asso.description.truncate(150) %>
               </div>
               <%#= asso.address %>
               <div class="mt-auto d-flex justify-content-start flex-row pt-3" style="font-size: 14px;">
