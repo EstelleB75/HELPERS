@@ -1,42 +1,81 @@
+.show-container {
+  width: 70vw;
+  min-width: 350px;
+  margin: 4vh auto;
+}
+
+.show-image {
+  height: 35vh;
+  min-height: 250px;
+  background-size: cover;
+  border: 10px solid white;
+  background-color: white;
+  margin: 0 auto;
+  border-radius: 50%;
+  width: 35vh;
+  min-width: 250px;
+}
+
+#show-info {
+  margin-left: 20px;
+  width: 60%;
+}
+
+#show-info-tags {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+.show-content {
+  background-color: white;
+  border-radius: 10px;
+  padding: 30px;
+}
+
 #asso-name {
   font-size: 29px;
-  margin-top: 10px;
-  padding-top: 20px;
   font-weight: 600
 }
 
 #profile {
-  display: grid !important;
-  grid-template-columns: 1fr 1fr !important;
+  display: flex;
+  width: 100%;
 }
+
+#show-profile-details {
+  width: 40%;
+}
+
 
 #showbtn {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   margin: 10px;
+  margin: 35px 10px 10px 10px;
 }
 
 #show-tagbtn {
-  margin-left: 46px;
   font-size: 22px;
 }
 
 #show-tag {
   font-size: 18px;
   color: #6c757d;
-  margin-left: 50px;
-  margin-top: 63px;
 }
 
 #show-cat {
   font-size: 30px;
   margin-top: 10px;
+  text-align: center;
+  margin-right: 28px;
 }
 
 .btn-show {
   padding: 20px;
   box-shadow: 1px 1px 1px 1px lightgrey;
+  border-radius: 10px;
 
   a {
     text-decoration: none;
@@ -55,7 +94,6 @@
 }
 
 #asso-coord {
-  text-align: end;
   padding-right: 20px;
   padding-top: 20px;
   margin-top: 10px;
@@ -68,8 +106,14 @@
   padding-right: 60px;
   padding-top: 20px;
   padding-bottom: 20px;
+  margin-bottom: 60px;
 }
 
 .photo-show {
-  width: 300px;
+  width: 210px;
+  height: 210px;
+  background-size: cover;
+  border-radius: 50%;
+  border-color: white;
+  border: 4px solid white !important;
 }
