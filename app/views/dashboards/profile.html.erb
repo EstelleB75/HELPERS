@@ -1,55 +1,60 @@
 <div class="py-5vh background-pink px-5vw">
-  <div class="helpers-body bg-white py-5vh w-100 px-5vw helpers-rounded">
-    <div class="d-flex justify-content-center align-items-center py-4 m-4">
-      <%= image_tag("user.png",
-          width: 200, height: 200, crop: :fill) %>
-    </div>
-    <h3>Mes favoris</h3>
-    <% if current_user.favs.empty? %>
-      <div class="empty-favs">
-        <p>Il semble que vous n'ayez pas d'association en favoris 😥. Pour ajouter une association dans votre liste, cliquez sur l’icône <%= icon 'fas', 'heart', class: "heart" %> présente sur les fiches.</p>
-      </div>
-    <% else %>
-      <div class="asso-cards m-5">
-        <div class="d-flex flex-wrap flex-row justify-content-center align-items-center">
-          <% current_user.favs.each do |fav| %>
-            <div data-controller="fav" data-fav-target="card" class="w-50 my-3 d-flex justify-content-center align-items-center">
-              <div class="asso-card d-flex justify-content-start custom-rounded custom-size bg-white" style="box-shadow: 4px 4px 14px rgba(0,0,0,0.1);">
-                <% if fav.asso.photo.attached? %>
-                  <%= cl_image_tag fav.asso.photo.key, class: "custom-rounded-left", height: 170, width: 150, crop: :fill %>
-                <% else %>
-                  <div class="custom-rounded">
-                    <%= image_tag 'building-2696768_960_720.png'%>
-                  </div>
-                <% end %>
-                <div class="d-flex flex-column px-4 py-3">
-                  <div class="font-20 important">
-                    <%= link_to fav.asso.name, asso_path(fav.asso), class: "text-left a-without-color" %>
-                  </div>
-                  <div class="font-16">
-                    <%= fav.asso.description.truncate(120) %>
-                  </div>
-                  <%= fav.asso.address %>
-                  <div class="mt-auto d-flex justify-content-start flex-row p-1">
-                    <div class="pr-3"><%= icon 'fas', 'city' %> <%= fav.asso.city %></div>
-                    <div class="pr-3"><%= icon 'far', 'envelope' %> <%= fav.asso.email%></div>
-                    <div class="pr-3"><%= icon 'fas', 'at' %> <%= link_to "Site web", fav.asso.website%></div>
-                    <div class="pr-3"><%= icon 'fas', 'phone' %> <%= fav.asso.phone_number%></div>
-                    <div>
-                      <%= link_to fav_path(fav), data: {action: 'click->fav#destroy'}, method: :delete, remote: true do %>
-                        <%= icon 'fas', 'heart', data: {'fav-target': 'icon'} %>
-                      <% end %>
+  <div class="helpers-body bg-white w-100 helpers-rounded d-flex flex-row" style="height: 70vh;">
+    <div id="map"
+     style="width: 50%; height: 70vh;"
+     class="custom-rounded-left-10"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+    <div class="w-50" style="overflow: hidden; height: 100%; overflow-y: scroll;">
+      <div class="d-flex flex-column justify-content-center align-items-center">
+        <h3>Mes favoris</h3>
+        <% if current_user.favs.empty? %>
+          <div class="empty-favs">
+            <p>Il semble que vous n'ayez pas d'association en favoris 😥. Pour ajouter une association dans votre liste, cliquez sur l’icône <%= icon 'fas', 'heart', class: "heart" %> présente sur les fiches.</p>
+          </div>
+        <% else %>
+          <div class="asso-cards m-5">
+            <div class="d-flex flex-wrap flex-row justify-content-center align-items-center">
+              <% current_user.favs.each do |fav| %>
+                <div data-controller="fav" data-fav-target="card" class="w-100 my-3 d-flex justify-content-center align-items-center">
+                  <div class="asso-card d-flex justify-content-start custom-rounded custom-size bg-white" style="box-shadow: 4px 4px 14px rgba(0,0,0,0.1);">
+                    <% if fav.asso.photo.attached? %>
+                      <%= cl_image_tag fav.asso.photo.key, class: "custom-rounded-left", height: 170, width: 150, crop: :fill %>
+                    <% else %>
+                      <div class="custom-rounded">
+                        <%= image_tag 'building-2696768_960_720.png'%>
+                      </div>
+                    <% end %>
+                    <div class="d-flex flex-column py-5 pr-5 pl-4rem">
+                      <div class="font-20 important">
+                        <%= link_to fav.asso.name, asso_path(fav.asso), class: "text-left a-without-color" %>
+                      </div>
+                      <div class="font-16">
+                        <%= fav.asso.description.truncate(120) %>
+                      </div>
+                      <%= fav.asso.address %>
+                      <div class="mt-auto d-flex justify-content-start flex-row p-1">
+                        <div class="pr-3"><%= icon 'fas', 'city' %> <%= fav.asso.city %></div>
+                        <div class="pr-3"><%= icon 'far', 'envelope' %> <%= fav.asso.email%></div>
+                        <div class="pr-3"><%= icon 'fas', 'at' %> <%= link_to "Site web", fav.asso.website%></div>
+                        <div class="pr-3"><%= icon 'fas', 'phone' %> <%= fav.asso.phone_number%></div>
+                        <div>
+                          <%= link_to fav_path(fav), data: {action: 'click->fav#destroy'}, method: :delete, remote: true do %>
+                            <%= icon 'fas', 'heart', data: {'fav-target': 'icon'} %>
+                          <% end %>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              <% end %>
+              <% if current_user.admin? %>
+                <%= link_to "Créer une asso", new_asso_path %>
+              <% end %>
             </div>
-          <% end %>
-          <% if current_user.admin? %>
-            <%= link_to "Créer une asso", new_asso_path %>
-          <% end %>
-        </div>
+          </div>
+        <% end %>
       </div>
-    <% end %>
+    </div>
   </div>
 </div>
