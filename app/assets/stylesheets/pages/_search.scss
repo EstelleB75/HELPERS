@@ -14,8 +14,9 @@ input[type="checkbox"]:checked + label {
      background-color: white;
     padding: 20px;
     width: 1000px;
-    color:$helpers-red ;
-    margin: 30px;
+    color:#C43256 ;
+    margin-top: 30px;
+    margin-bottom: 30px;
     border-radius: 50px;
     border: 1px solid $helpers-red ;
    box-shadow: 1px 1px 8px 0px rgba(0,0,0,0.75);
@@ -35,13 +36,76 @@ input[type="checkbox"]:checked + label {
      background-color:$helpers-red;
     color:white;
   }
+  a {
+
+    background-color: white;
+    text-decoration: none;
+    border: 1px solid #C43256 ;
+    padding: 14px;
+    color:#C43256 ;
+    border-radius: 100px;
+    margin: 10px;
+    width: 25%;
+  }
+
+  h2 {
+    animation: slide 1s linear;
+  }
 }
 
+.adresse-style {
+  label {
+    margin-bottom:20px;
+    font-size: 30px;
+  }
+}
 
+#address {
+border-radius: 30px;
+width: 600px;
+height: 45px;
+}
 
+.submit-btn {
+  input {
+    background-color: white;
+    text-decoration: none;
+    border: 1px solid #C43256 ;
+    padding: 14px;
+    color:#C43256 ;
+    border-radius: 10px;
+    margin-top:30px;
+    margin-bottom: 30px;
+    width: 500px;
+
+}
+
+a{
+  
+  background-color: white;
+  text-decoration: none;
+  border: 1px solid #C43256 ;
+  padding: 14px;
+  color:#C43256 ;
+  border-radius: 100px;
+  margin: 10px;
+  width: 25%;
+}
+a:hover {
+  background-color:#C43256;
+  color:white;
+}
+}
+
+.submit-btn{
+  input:hover{
+  background-color:#C43256;
+  color:white;
+}
+}
 @keyframes slide {
 0% {margin-left:-200px;}
 33%{margin-left:-150px;}
 66%{margin-left:-75px;}
-100%{margin-left:30px;}
+100%{margin-left:0px;}
 }

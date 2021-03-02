@@ -8,7 +8,7 @@ class SearchsController < ApplicationController
     @sub_cat = SubCategory.find(params[:sub_cat])
     @tags = Tag.where(sub_category: @sub_cat)
   end
-  
+
   def search_tag
     @tag = Tag.find(params[:tag])
   end
@@ -23,6 +23,4 @@ class SearchsController < ApplicationController
     end
     @assos = arr.uniq
   end
-
-
 end

@@ -1,41 +1,47 @@
-<div class="py-5vh background-pink px-5vw">
-  <div class="bg-white helpers-rounded px-5vw py-5vh">
-    <div id="profile" class="p-4">
-      <div>
+<div class="show-container">
+  <div class="show-content">
+
+    <div id="profile">
+
+      <div id="show-profile-details">
         <div>
-          <h1 id="asso-name"> <%= @asso.name %> </h1>
-          <h2 id="asso-phone"> <%= @asso.phone_number %> </h2>
-          <h2 id="asso-des"> <%= @asso.description %> </h2>
         </div>
         <% if @asso.photo.attached? %>
-          <div class="d-flex justify-content-start flex-column custom-rounded border" style="background-image: url('<%= cl_image_path @asso.photo.key, height: 250, width: 300, crop: :fill %>');width: 350px;height: 250px;background-size: cover;"></div>
+          <div class="show-image" style="background-image: url('<%= cl_image_path @asso.photo.key, height: 250, width: 250, crop: :fill %>');"></div>
         <% else %>
           <div class="d-flex justify-content-start flex-column custom-rounded border" style="width: 350px;height: 250px;background-size: cover;">
           </div>
         <% end %>
-        <div id="show-cat">
-          <% @asso.association_tags.each do |asso_tag| %>
-            <div id="show-tagbox">
-              <span class="badge badge-pill badge-secondary"> <%= asso_tag.tag.sub_category.category.name %> </span>
-            </div>
-          <% end %>
+        <div id="show-tags">
+          <div id="show-cat">
+            <% @asso.association_tags.each do |asso_tag| %>
+              <div id="show-tagbox">
+                <span class="badge"> <%= asso_tag.tag.sub_category.category.name %> </span>
+              </div>
+            <% end %>
+          </div>
         </div>
       </div>
-      <div>
+
+      <div id="show-info">
         <div id="asso-coord">
+          <h1 id="asso-name"> <%= @asso.name %> </h1>
           <%= @asso.address %>
-          <div>
-            <%= @asso.city %>
-          </div>
+          <%= @asso.city %>
         </div >
-        <div>
+          <h2 id="asso-phone"> <%= @asso.phone_number %> </h2>
+          <h2 id="asso-des"> <%= @asso.description %> </h2>
+          <hr>
           <h2 id="show-tag"> Ils vous proposent </h2>
+        <div id="show-info-tags">
           <% @asso.association_tags.each do |asso_tag| %>
             <div id="show-tagbtn" >
               <span class="badge badge-pill badge-light"> <%= asso_tag.tag.name %> </span>
             </div>
           <% end %>
         </div>
+         <hr>
+
         <div id="showbtn">
           <div class="btn-show">
             <a href="mailto:<%= @asso.email %>">Envoyer un mail</a>
@@ -45,6 +51,8 @@
           </div>
         </div>
       </div>
+
     </div>
+
   </div>
 </div>
