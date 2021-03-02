@@ -1,0 +1,16 @@
+<div class="container-form">
+<%= link_to "back", search_path  %>
+<div class="input_styling bg-white p-5 m-5 d-flex justify-content-center align-items-center flex-column w-100">
+  <%= form_tag("/search_tag", method: :get) do %>
+  <div class="d-flex flex-column">
+    <% @tags.each do |tag| %>
+    <div>
+      <%= check_box_tag "tag_#{tag.id}", tag.id, false, name: "tag" %>
+      <%= label_tag "tag_#{tag.id}", tag.name %>
+      </div>
+    <% end %>
+    </div>
+  <%= submit_tag "Continuer" %>
+  </div>
+  <% end %>
+</div>

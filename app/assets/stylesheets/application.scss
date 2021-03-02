@@ -14,8 +14,4 @@
 @import "components/index";
 @import "pages/index";
 @import "pages/form";
-
-// Hidden class to handle class with JS
-.hidden {
-  display: none;
-}
+@import "pages/search"
