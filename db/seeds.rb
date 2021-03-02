@@ -66,8 +66,8 @@ end
 associations = [
     {name: "ADMR", photo: "https://www.bainssuroust.fr/medias/2020/03/ADMR_baseline_JPG-scaled.jpg", city: "Paris", description: "Service d'aide à la personne. L'ADMR est un réseau associatif. Il intervient en France de la naissance à la fin de vie, dans quatre domaines : autonomie, services de confort à domicile, famille et santé. Il est constitué de 2 700 associations locales autonomes qui interviennent sur un territoire déterminé", tag: ["Aide à domicile", "Soin", "Service"]},
     {name: "Les Restos du coeur", photo: "https://causeaeffet.com/wp-content/uploads/2019/11/resto-du-coeur-logo.jpg", city: "Paris", description: "Les Restos ont pour but « d'aider et d'apporter une assistance bénévole aux personnes démunies, notamment dans le domaine alimentaire par l'accès à des repas gratuits", tag: ["Bon d'achat", "Dons", "Entraide"]},
-    {name: "Emmaüs", photo: "https://upload.wikimedia.org/wikipedia/fr/thumb/4/4d/Logo_EF_Couleur.svg/1200px-Logo_EF_Couleur.svg.png", city: "Paris", description: "Fidèle à la volonté de l'abbé Pierre, Emmaüs est devenu à la fois une fabrique d'innovations sociales et de solidarités pour aider des publics en situation de grande précarité", tag: ["Service", "Immobilier", "Social"]},
-    {name: "Je t'aide", photo: "https://associationjetaide.org/wp-content/uploads/2020/07/logo-jetaide-scaled.jpg", city: "Paris", description: "Luttons contre l'isolement social des aidant.es !", tag: ["Service", "Lien social"]},
+    {name: "Emmaüs", photo: "https://upload.wikimedia.org/wikipedia/fr/thumb/4/4d/Logo_EF_Couleur.svg/1200px-Logo_EF_Couleur.svg.png", city: "Montreuil", description: "Fidèle à la volonté de l'abbé Pierre, Emmaüs est devenu à la fois une fabrique d'innovations sociales et de solidarités pour aider des publics en situation de grande précarité", tag: ["Service", "Immobilier", "Social"]},
+    {name: "Je t'aide", photo: "https://associationjetaide.org/wp-content/uploads/2020/07/logo-jetaide-scaled.jpg", city: "Ivry-sur-Seine", description: "Luttons contre l'isolement social des aidant.es ! Notre mission est de faire avancer les droits des aidants auprès des pouvoirs publics pour qu’aider ne rime pas avec précarité.", tag: ["Service", "Lien social"]},
     {name: "Aurore Association", photo: "https://upload.wikimedia.org/wikipedia/fr/f/fe/Association_Aurore_logo.png", city: "Paris", description: "Accueillir et accompagner vers l’autonomie les personnes en situation de précarité ou d’exclusion via l’hébergement, les soins et l’insertion.", tag: ["Insertion", "Soin", "Hébergement"]},
     {name: "La Croix Rouge", photo: "https://www.mairie-confolens.fr/medias/2018/02/Croix-Rouge-Francaise.jpg", city: "Paris", description: "Ses missions fondamentales sont l'urgence, le secourisme, l'action sociale, la formation, la santé et l'action internationale.", tag: ["Soin", "Maladie", "Lien social"]},
     {name: "Petits frères des Pauvres", photo: "https://www.pagesjaunes.fr/media/ugc/les_petits_freres_des_pauvres_06748200_150135878" , city: "Paris", description: "Lutter contre l’isolement et la solitude des personnes âgées", tag: ["Personne agée", "Entraide"]},
@@ -107,6 +107,12 @@ associations = [
 associations.each do |asso|
     set_asso(asso[:name], asso[:photo], asso[:city], asso[:description], asso[:tag])
 end
+
+Asso.find_by(name: "ADMR").update(address: "184 A, rue du Faubourg Saint-Denis", phone_number: "01 44 65 55 55", email: "info@admr.org", website: "https://www.admr.org/")
+
+Asso.find_by(name: "Je t'aide").update(address: "54, rue Molière", email: " contact@associationjetaide.org", website: "https://associationjetaide.org/")
+
+Asso.find_by(name: "Emmaüs").update(address: "47, avenue de la Résistance", email: "relation.donateurs@emmaus-france.org", website: "https://emmaus-france.org/")
 
 # on fake un association tag pour les 8 premières associations, et le tag lien social, pour la démo mais pas en vrai
 # Asso.first(8).each do |asso|
