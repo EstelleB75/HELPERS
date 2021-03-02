@@ -1,8 +1,11 @@
 import Isotope from 'isotope-layout'
+import item from 'isotope-layout/js/item';
 let queryRegexp;
+let filterValue;
 
 const filter = (itemElem) => queryRegexp ? itemElem.textContent.match(queryRegexp) : true
 
+const filterCat = (itemElem) => filterValue ? JSON.parse(itemElem.dataset.cat).includes(filterValue) : true
 
 const arrangeItems = (iso) => {
     const quicksearchField = document.querySelector('.quicksearch');
@@ -12,12 +15,7 @@ const arrangeItems = (iso) => {
     iso.arrange();
 }
 
-const filterFns = {
-  categories: function( itemElem ) {
-    const subcat = itemElem.querySelector('').innerText;
-    ;
-  }
-};
+
 
 
 
@@ -36,9 +34,10 @@ const isotopeInit = () => {
 
   const filtersElem = document.querySelector('.subcats');
   filtersElem.addEventListener( 'click', ( event ) => {  
-    const filterValue = event.target.getAttribute('data-cat');
-    filterValue = filterFns[ filterValue ] || filterValue;
-    iso.arrange({ filter: filterValue });
+    filterValue = event.target.innerText.replace('&', '\\&');
+    console.log(filterValue);
+
+    iso.arrange({ filter: filterCat });
   });
 }
 
