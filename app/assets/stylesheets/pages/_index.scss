@@ -39,11 +39,16 @@
 
 .iso-grid:after {
     content: '';
-    display: block;
+    display: none;
     clear: both;
   }
 
 .element-item{
+    width: 50%;
+    display: flex;
+    justify-content: center;
     position: relative;
     float: left;
+    margin-top: $spacer;
+    margin-bottom: $spacer;
 }
