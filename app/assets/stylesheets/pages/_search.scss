@@ -3,13 +3,13 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"]:checked + label {
-  background-color: #C43256;
+  background-color: $helpers-red;
   color:white;
 }
 
 .input_styling{
-  
-  
+
+
   label {
      background-color: white;
     padding: 20px;
@@ -18,22 +18,22 @@ input[type="checkbox"]:checked + label {
     margin-top: 30px;
     margin-bottom: 30px;
     border-radius: 50px;
-    border: 1px solid #C43256 ;
-   box-shadow: 1px 1px 8px 0px rgba(0,0,0,0.75); 
+    border: 1px solid $helpers-red ;
+   box-shadow: 1px 1px 8px 0px rgba(0,0,0,0.75);
    animation: slide 1s linear;
   }
   input {
     background-color: white;
     text-decoration: none;
-    border: 1px solid #C43256 ;
+    border: 1px solid $helpers-red ;
     padding: 14px;
-    color:#C43256 ;
+    color:$helpers-red ;
     border-radius: 10px;
     margin: 10px;
     width: 20%;
   }
   input:hover {
-     background-color:#C43256;
+     background-color:$helpers-red;
     color:white;
   }
   a {

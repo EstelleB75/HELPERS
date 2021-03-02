@@ -1,103 +1,83 @@
-<div class="py-10vh background-pink px-5vw d-flex flex-column">
-  <div id="homeheader" class="text-center py-vh w-100 px-5vw bg-white helpers-rounded h2-bold p-3">
+<div class="background-pink px-10vw d-flex flex-column justify-content-center calc">
+  <div id="home-header" class="d-flex justify-content-between flex-column text-center py-5vh w-100 px-10vw bg-white helpers-rounded h2-bold px-5">
     <h2>Helpers vous connecte</h2>
     <div class="separator d-flex justify-content-center align-items-center"></div>
-    <br>
-    <div class="row d-flex justify-content-between mx-0 py-5">
-      <div class="col-3 d-flex flex-column justify-content-center align-items-center">
-        <div class="demi-rounded-up" style="background-image: url('https://images.unsplash.com/photo-1508847154043-be5407fcaa5a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1'); height: 300px; background-size: cover; background-position: center; width: 100%;"></div>
-        <div class="d-flex w-100 justify-content-center align-items-center helpers-green demi-rounded p-3">
-          <%= link_to "Solidarité", search_path(:type => "Solidarité" ) %>
-        </div>
+    <h4 class="text-muted p-3">Ensemble, trouvons une solution qui vous correspond.</h4>
+    <div class="row d-flex justify-content-between mx-0 py-3 px-5 w-100 ml-auto mr-auto">
+      <div class="col-4 d-flex flex-column justify-content-center align-items-center">
+        <div class="demi-rounded-up" style="background-image: url('https://images.unsplash.com/photo-1508847154043-be5407fcaa5a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1'); height: 200px; background-size: cover; background-position: center; width: 100%;"></div>
+        <%= link_to 'Solidarité', search_path(:type => "Solidarité" ), class: 'd-flex w-100 justify-content-center align-items-center helpers-green demi-rounded p-3 a-without-color font-20' %>
       </div>
       <div class="col-4 d-flex flex-column justify-content-center align-items-center rounded">
-        <div class="demi-rounded-up" style="background-image: url('https://images.unsplash.com/photo-1604604557577-4e27a33e57da?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1'); height: 300px; background-size: cover; background-position: center; width: 100%;"></div>
-        <div class="d-flex w-100 justify-content-center align-items-center helpers-red demi-rounded p-3">
-          <%= link_to "Assistance", search_path(:type => "Assistance" ) %>
-        </div>
+        <div class="demi-rounded-up" style="background-image: url('https://images.unsplash.com/photo-1604604557577-4e27a33e57da?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1'); height: 200px; background-size: cover; background-position: center; width: 100%;"></div>
+        <%= link_to 'Assistance', search_path(:type => "Assistance" ), class: 'd-flex w-100 justify-content-center align-items-center helpers-red demi-rounded p-3 a-without-color font-20' %>
       </div>
-      <div class="col-3 d-flex flex-column justify-content-center align-items-center rounded">
-        <div class="demi-rounded-up" style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1'); height: 300px; background-size: cover; background-position: center; width: 100%;"></div>
-        <div class="d-flex w-100 justify-content-center align-items-center helpers-yellow demi-rounded p-3">
-          <%= link_to "Financier", search_path(:type => "Financier" ) %>
-        </div>
+      <div class="col-4 d-flex flex-column justify-content-center align-items-center rounded">
+        <div class="demi-rounded-up" style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1'); height: 200px; background-size: cover; background-position: center; width: 100%;"></div>
+        <%= link_to 'Financier', search_path(:type => "Financier" ), class: 'd-flex w-100 justify-content-center align-items-center helpers-yellow demi-rounded p-3 a-without-color font-20' %>
       </div>
     </div>
   </div>
-<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic1.squarespace.com%2Fstatic%2F57bfc190f7e0abe0fdcd221f%2Ft%2F58afc451cd0f682385135074%2F1499409789305%2FArrow%2Bfor%2BPage%2B1_1.gif&f=1&nofb=1" class="d-flex justify-content-center align-self-center img-size">
-</div>
 </div>
 <div id="barre-de-recherche" class="bg-white index-display pt-5">
-  <div class="bg-white index-display pt-5">
-    <h2 class="text-center bolder-text p-3">Toutes nos associations</h2>
-    <div class="separator d-flex justify-content-center align-items-center"></div>
-    <br>
-    <br>
-    <%= form_tag assos_path, class: "d-flex justify-content-center align-items-center", method: :get do %>
-      <div id="search-data" class="d-flex form-search search-data" data-assos="<%= @assos_name.to_json %>">
-        <%= text_field_tag :query,
+  <!--   <div class="bg-white index-display pt-5">
+ -->    <br>
+  <h2 class="text-center bolder-text p-3">Toutes les aides</h2>
+  <div class="separator d-flex justify-content-center align-items-center"></div>
+  <br>
+  <%= form_tag assos_path, class: "d-flex justify-content-center align-items-center", method: :get do %>
+    <div id="search-data" class="d-flex form-search search-data" data-assos="<%= @assos_name.to_json %>">
+      <%= text_field_tag :query,
           params[:query],
           autocomplete: :off,
           class: "form-control search-rounded search d-flex justify-content-center align-items-center w-500 position-relative",
           placeholder: "Rechercher une association"
         %>
-        <%= button_tag do %>
-          <%= icon 'fas', 'search' %>
-        <% end %>
-      </div>
-    <% end %>
-    <div class="asso-cards m-5">
-      <div class="d-flex flex-wrap flex-row justify-content-center align-items-center px-10vw">
-        <% @assos.each do |asso| %>
-          <div class="w-50 my-3 d-flex justify-content-center align-items-center">
-            <div class="asso-card d-flex justify-content-start custom-rounded custom-size" style="box-shadow: 4px 4px 14px rgba(0,0,0,0.1);">
-              <% if asso.photo.attached? %>
-                <%= cl_image_tag asso.photo.key, class: "custom-rounded-left", height: 180, width: 150, crop: :fill %>
-              <% else %>
-                <div class="custom-rounded">
-                  <%= image_tag 'building-2696768_960_720.png'%>
-                </div>
-              <% end %>
-              <div class="d-flex flex-column px-4 py-3">
-                <div class="font-20 important">
-                  <%= link_to asso.name, asso_path(asso), class: "text-left a-without-color" %>
-                </div>
-                <div class="font-16">
-                  <%= asso.description.truncate(120) %>
-                </div>
-                <%= asso.address %>
-                <div class="mt-auto d-flex justify-content-start flex-row p-1">
-                  <div class="pr-3"><%= icon 'fas', 'city' %> <%= asso.city %></div>
-                  <div class="pr-3"><%= icon 'far', 'envelope' %> <%= asso.email%></div>
-                  <div class="pr-3"><%= icon 'fas', 'at' %> <%= link_to "Site web", asso.website%></div>
-                  <div class="pr-3"><%= icon 'fas', 'phone' %> <%= asso.phone_number%></div>
-                  <div data-controller="fav">
-                    <% if current_user.favorites?(asso) %>
-                      <%= link_to (Fav.find_by(asso: asso, user: current_user)), method: :delete, data: {action: 'click->fav#update'}, remote: true do %>
-                        <%= icon 'fas', 'heart', data: {'fav-target': 'icon'} %>
-                      <% end %>
-                    <% else %>
-                      <%= link_to asso_favs_path(asso), method: :post, data: {action: 'click->fav#update'}, remote: true do %>
-                        <%= icon 'far', 'heart', data: {'fav-target': 'icon'} %>
-                      <% end %>
+      <%= button_tag do %>
+        <%= icon 'fas', 'search' %>
+      <% end %>
+    </div>
+  <% end %>
+  <div class="asso-cards m-5">
+    <div class="d-flex flex-wrap flex-row justify-content-center align-items-center px-10vw">
+      <% @assos.each do |asso| %>
+        <div class="w-50 my-3 d-flex justify-content-center align-items-center">
+          <div class="asso-card custom-rounded custom-size" style="box-shadow: 4px 4px 14px rgba(0,0,0,0.1);">
+            <% if asso.photo.attached? %>
+              <%= cl_image_tag asso.photo.key, class: "custom-rounded-left", height: 180, width: 150, crop: :fill %>
+            <% else %>
+              <div class="custom-rounded">
+                <%= image_tag 'building-2696768_960_720.png'%>
+              </div>
+            <% end %>
+            <div class="py-5 pr-5 pl-4rem d-flex flex-column justify-content-between h-100">
+              <div class="font-20 important py-4">
+                <%= link_to asso.name, asso_path(asso), class: "text-left a-without-color" %>
+              </div>
+              <div class="font-16" style="color: gray;">
+                <%= asso.description %>
+              </div>
+              <%#= asso.address %>
+              <div class="mt-auto d-flex justify-content-start flex-row pt-3" style="font-size: 14px;">
+                <div class="pr-3"><%= icon 'fas', 'city' %> <%= asso.city %></div>
+                <div class="pr-3"><%= link_to icon 'far', 'envelope', Mail %> <%asso.email %></div>
+                <div class="pr-3"><%=link_to icon 'fas', 'at' %> Site <%asso.website %></div>
+                <!--  <div class="pr-3"><%= icon 'fas', 'phone' %> <%= asso.phone_number%></div> -->
+                <div data-controller="fav" id="fav_card">
+                  <% if current_user.favorites?(asso) %>
+                    <%= link_to (Fav.find_by(asso: asso, user: current_user)), method: :delete, data: {action: 'click->fav#update'}, remote: true do %>
+                      <%= icon 'fas', 'heart', data: {'fav-target': 'icon'} %>
                     <% end %>
-                  </div>
+                  <% else %>
+                    <%= link_to asso_favs_path(asso), method: :post, data: {action: 'click->fav#update'}, remote: true do %>
+                      <%= icon 'far', 'heart', data: {'fav-target': 'icon'} %>
+                    <% end %>
+                  <% end %>
                 </div>
               </div>
             </div>
           </div>
-        <% end %>
-      </div>
-    </div>
-    <div class="helpers-footer">
-      <footer class="footer border-top d-flex justify-content-between">
-        <div class="helpers-text d-flex justify-content-start">
-          <p class=>Made with <%= icon 'fas', 'heart', class: "heart" %> by Helpers' Team</p>
         </div>
-        <div class="helpers-icons d-flex justify-content-end">
-          <%= icon 'fab', 'twitter' %>
-          <%= icon 'fab', 'facebook' %>
-          <%= icon 'fab', 'instagram' %>
-        </div>
-      </footer>
+      <% end %>
     </div>
+  </div>

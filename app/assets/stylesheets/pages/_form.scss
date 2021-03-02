@@ -2,7 +2,7 @@
   background-color: white;
   padding: 20px;
   width: 1000px;
-  color: #C43256;
+  color: $helpers-red;
   margin: 30px;
   border-radius: 10px;
   border-width: 1px;
@@ -15,7 +15,7 @@
 }
 
 .btn-question:hover {
-  background-color: #C43256;
+  background-color: $helpers-red;
   color: white;
 }
 
@@ -45,34 +45,34 @@
 .question-1 {
   a {
     text-decoration: none;
-    color: #C43256;
+    color: $helpers-red;
 
   }
 }
 
 .custom-select {
-  color: #C43256;
+  color: $helpers-red;
   border-radius: 5px;
-  border-color: #C43256
+  border-color: $helpers-red
 }
 
 .btn-direction {
   border-width: 0px;
-  color: #C43256;
+  color: $helpers-red;
 }
 
 .btn-back {
   border-width: 1px;
   background-color: white;
   padding: 5px;
-  color: #C43256;
+  color: $helpers-red;
   border-radius: 10px;
   border-color: red;
   width: 200px;
 }
 
 .btn-back:hover {
-  background-color: #C43256;
+  background-color: $helpers-red;
   color: white;
 }
 
@@ -80,7 +80,7 @@
   border-width: 1px;
   background-color: white;
   padding: 5px;
-  color: #C43256;
+  color: $helpers-red;
   border-radius: 10px;
   border-color: red;
 }
@@ -99,9 +99,9 @@
   a {
     background-color: white;
     text-decoration: none;
-    border: 1px solid #C43256;
+    border: 1px solid $helpers-red;
     padding: 14px;
-    color: #C43256;
+    color: $helpers-red;
     border-radius: 10px;
     margin: 10px;
     width: 20%;
