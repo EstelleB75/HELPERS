@@ -3,6 +3,16 @@
   padding-right: 5vw;
 }
 
+.px-10vw {
+  padding-left: 10vw;
+  padding-right: 10vw;
+}
+
+.py-10vh {
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+}
+
 .py-5vh {
   padding-top: 5vh;
   padding-bottom: 5vh;
@@ -86,8 +96,8 @@
 }
 
 .custom-size {
-  width: 700px;
-  height: 170px;
+  width: 90%;
+  height: 180px;
 }
 
 .custom-border {
@@ -119,8 +129,12 @@
   font-size: 16px;
 }
 
-.font-22 {
-  font-size: 22px;
+.font-20 {
+  font-size: 20px;
+}
+
+.important {
+  font-weight: 700;
 }
 
 .footer {
