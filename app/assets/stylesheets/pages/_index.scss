@@ -62,22 +62,15 @@
     color: #000 !important;
 }
 
-.iso-grid{
-    display: grid;
-}
-
-.iso-grid:after {
-    content: '';
-    display: none;
-    clear: both;
-  }
+// .iso-grid{
+//     display: grid;
+// }
 
 .element-item{
     width: 50%;
     display: flex;
     justify-content: center;
     position: relative;
-    float: left;
     margin-top: $spacer;
     margin-bottom: $spacer;
 }
