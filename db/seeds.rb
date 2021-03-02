@@ -15,7 +15,7 @@ Category.destroy_all
 
 
 categories = [
-    { cat: "Solidarité", sub_cat: %w{Santé Alimentaire ALP Culture&Loisirs} },
+    { cat: "Solidarité", sub_cat: ["Santé", "Alimentaire", "Aide à la Personne", "Culture & Loisirs"] },
     { cat: "Assistance", sub_cat: %w{Harcelement Violences Abus} },
     { cat: "Financier", sub_cat: %w{Emploi Logement Transport Formation&Education Juridique} }
 ]
@@ -25,13 +25,13 @@ tags = {
     "Violences" => %w{Psychologie Enfant Sexuel Femme Religion Policière Discrimination},
     "Abus" => %w{Prejudice Sénior Succession Fraude Vulnérabilité Manipulation},
     "Santé" => %w{Maladie Mutuelle Nutrition Bien-être Decès Complémentaire},
-    "ALP" => ["Aide à domicile", "Soin", "Mobilité", "Lien social", "Service", "Personne agée"],
+    "Aide à la Personne" => ["Aide à domicile", "Soin", "Mobilité", "Lien social", "Service", "Personne agée"],
     "Emploi" => %w{Chômage Insertion Offre Allocation Entrepreunariat},
     "Logement" => %w{Travaux Rénovation Annonce Immobilier Individuel Social Hébergement},
     "Transport" => %w{Déplacement Abonnement Gratuit Voiture Bus Métro},
     "Formation&Education" => %w{Reconversion Spécialisation Financement Entreprise Région AIF},
     "Juridique" => ["Droit", "Litige", "Procédure", "Conseil", "Démarche", "Faire appel"],
-    "Culture&Loisirs" => %w{Sport Vacances Musée Activité Réduction Cours},
+    "Culture & Loisirs" => %w{Sport Vacances Musée Activité Réduction Cours},
     "Alimentaire" => ["Bon d'achat", "Paniers", "Dons", "Ticket restaurant", "Entraide"]
 }
 
