@@ -1,19 +1,19 @@
 <div class="container-form">
-  <div class="input_styling bg-white p-5 m-5 d-flex justify-content-center align-items-center flex-column w-100">
+  <div class="input_styling bg-white p-5 mt-5 d-flex justify-content-center align-items-center flex-column w-100">
     <h2>Pour plus de précision...</h2>
     <%= form_tag("/search_tag", method: :get) do %>
-      <div class="d-flex flex-column">
+      <div class="d-flex justify-content-around flex-wrap" style= "max-width:62.5rem;" >
+    <div>
         <% @tags.each do |tag| %>
-          <div>
             <%= radio_button_tag "tag", tag.id, false, name: "tag" %>
             <%= label_tag "tag_#{tag.id}", tag.name %>
             <%= hidden_field_tag "sub_cat", @sub_cat.id %>
-          </div>
         <% end %>
+        </div>
+    </div>
         <div class="submit-btn">
           <%= link_to icon('fas','step-backward'), search_path(params: { type: @sub_cat.category.name })  %>
           <%= submit_tag "Continuer" %>
-        </div>
       </div>
     <% end %>
   </div>
