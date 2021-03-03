@@ -8,4 +8,8 @@ class Asso < ApplicationRecord
   validates :city, presence: true
   validates :description, presence: true
   # validates :email, presence: true
+
+  def get_subcat
+    self.tags.map(&:sub_category).map(&:name)
+  end
 end
