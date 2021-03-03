@@ -10,7 +10,7 @@
         <h3 class="pt-4 bolder-text">Mes favoris</h3>
         <% if current_user.favs.empty? %>
           <div class="empty-favs d-flex justify-content-center align-items-center">
-            <p class="text-middle">Il semble que vous n'ayez pas d'association en favoris 😥. Pour ajouter une association dans votre liste, cliquez sur l’icône <%= icon 'fas', 'heart', class: "heart" %> présente sur les fiches.</p>
+            <p class="text-middle">Vous n'avez pas encore de Favoris. Cliquez pour en ajouter !<%= icon 'fas', 'heart', class: "heart" %> présente sur les fiches.</p>
           </div>
         <% else %>
           <div class="asso-cards m-5">
@@ -30,7 +30,7 @@
                         <%= link_to fav.asso.name, asso_path(fav.asso), class: "text-left a-without-color" %>
                       </div>
                       <div class="font-16" style="color: gray;">
-                        <%= fav.asso.description %>
+                        <%= fav.asso.description.truncate(150) %>
                       </div>
                       <%#= fav.asso.address %>
                       <div class="mt-auto d-flex justify-content-start flex-row pt-3" style="font-size: 14px;">

@@ -17,6 +17,7 @@ input[type="radio"]:checked + label {
     margin-bottom: 30px;
     border-radius: 50px;
     border: 1px solid #ababab; 
+    animation: showTopText 1s;
   }
   input {
     background-color: #C43256;
@@ -27,6 +28,7 @@ input[type="radio"]:checked + label {
     border-radius: 10px;
     margin-top: 10px;
     width: 100%;
+    animation: showTopText 2s;
   }
   input:hover {
      background-color:$helpers-red;
@@ -42,6 +44,7 @@ input[type="radio"]:checked + label {
     border-radius: 100px;
     margin: 10px;
     width: 25%;
+    animation: showTopText 2s;
   }
 
 
@@ -51,6 +54,7 @@ input[type="radio"]:checked + label {
   label {
     margin-bottom:20px;
     font-size: 30px;
+    animation: showTopText 1s;
   }
 }
 
@@ -64,6 +68,8 @@ height: 45px;
   display:flex;
   align-items: center;
   justify-content: center;
+  animation: showTopText 1s;
+
   input {
     background-color: #C43256;
     text-decoration: none;
@@ -74,7 +80,6 @@ height: 45px;
     margin-top:30px;
     margin-bottom: 30px;
     width: 500px;
-
 }
 
 a{
@@ -105,4 +110,10 @@ a:hover {
 33%{margin-left:-150px;}
 66%{margin-left:-75px;}
 100%{margin-left:0px;}
+}
+
+
+@keyframes showTopText {
+  0% { transform: translate3d(0, 100%, 0); }
+  100% { transform: translate3d(0, 0, 0); }
 }

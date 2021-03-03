@@ -1,12 +1,12 @@
 class AssosController < ApplicationController
   def index
     @assos_name = Asso.pluck(:name).sort
-    @subcats = SubCategory.all
+    @subcats = SubCategory.all.map(&:name).sort
     if params[:query].present?
       sql_query = "name ILIKE :query"
-      @assos = policy_scope(Asso.where(sql_query, query: "%#{params[:query]}%"))
+      @assos = policy_scope(Asso.with_attached_photo.includes(association_tags: {tag: :sub_category}).where(sql_query, query: "%#{params[:query]}%"))
     else
-      @assos = policy_scope(Asso)
+      @assos = policy_scope(Asso.with_attached_photo.includes(association_tags: {tag: :sub_category}))
     end
   end
 
