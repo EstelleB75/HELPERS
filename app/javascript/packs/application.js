@@ -24,10 +24,7 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   /* handleForm() */
+  initMapbox();
   autocompleteSearch()
   isotopeInit()
 });
-
-document.addEventListener('turbolinks:load', () => {
-  initMapbox();
-})
