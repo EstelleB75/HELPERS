@@ -18,6 +18,10 @@
   position: relative;
 }
 
+.lien{
+  text-decoration: none !important;
+}
+
 .asso-card img {
     background-repeat: no-repeat;
     background-size: contain;
@@ -94,7 +98,7 @@
             opacity: 0.6;
             transition: opacity 0.3s ease;
           }
-          
+
           .btn-ghost:hover {
             opacity: 1;
           }
