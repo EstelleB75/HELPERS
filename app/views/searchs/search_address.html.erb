@@ -1,5 +1,5 @@
 <div class="bg-white index-display pt-5">
-  <h2 class="text-center bolder-text">Les résultats qui vous correspondent</h2>
+  <h2 class="text-center bolder-text">Vos résultats</h2>
   <div class="separator d-flex justify-content-center align-items-center"></div>
   <br>
   <br>
@@ -49,8 +49,19 @@
                 </div>
             </div>
           </div>
-        </div>
+          <% end %>
+
         <% end %>
-        
-      <% end %>
+      </div>
     </div>
+    <div class="helpers-footer">
+      <footer class="footer border-top d-flex justify-content-between">
+        <div class="helpers-text d-flex justify-content-start">
+          <p class=>Made with <%= icon 'fas', 'heart', class: "heart" %> by Helpers' Team</p>
+        </div>
+        <div class="helpers-icons d-flex justify-content-end">
+          <%= icon 'fab', 'twitter' %>
+          <%= icon 'fab', 'facebook' %>
+          <%= icon 'fab', 'instagram' %>
+        </div>
+      </footer>
