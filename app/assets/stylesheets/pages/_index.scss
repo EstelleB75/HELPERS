@@ -113,3 +113,27 @@
 .pt-5, .py-5 {
     padding-top: 1rem !important;
 }
+
+// ANIMATION A REFAIRE :c
+
+// .asso-card:hover > * {
+//   opacity: 0.5;
+// }
+
+// .asso-card:hover > *:hover {
+//   transform: scale(1.1);
+//   opacity: 1;
+// }
+
+.fade-out-siblings > * {
+  transition: 300ms opacity, 300ms transform;
+}
+
+.fade-out-siblings:hover > * {
+  opacity: 0.4;
+}
+
+.fade-out-siblings:hover > *:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
