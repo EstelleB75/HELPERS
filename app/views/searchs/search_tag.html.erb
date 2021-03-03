@@ -9,7 +9,7 @@
       </div>
       <%= hidden_field_tag :tag, @tag.id %>
       <div class="submit-btn">
-  <%= link_to icon('fas','step-backward'), search_sub_cat_path(params: { sub_cat: @tag.sub_category.id })  %>
+  <%= link_to icon('fas','step-backward'), search_sub_cat_path(params: { sub_cat: @tag.sub_category.id, category: @tag.sub_category.category.id })  %>
   <%= submit_tag "Voir les résultats" %>
   </div>
   <% end %>
