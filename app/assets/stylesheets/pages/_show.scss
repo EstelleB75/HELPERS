@@ -73,18 +73,20 @@
 }
 
 .btn-show {
-  padding: 20px;
-  box-shadow: 1px 1px 1px 1px lightgrey;
+  padding: 18px;
   border-radius: 10px;
-
+  border: 1px solid #a8a29f;
+  border-radius: 10px;
+  background-color: #a8a29f;
+  color: #f5f1ef;
+  font-size: 18px;
+  &:hover {
+    text-decoration: none;
+    background-color: #0B1B2D;
+  }
   a {
     text-decoration: none;
-    color: black;
-
-    &:hover {
-      text-decoration: none;
-      color: lightgrey;
-    }
+    color: #f5f1ef;;
   }
 }
 
