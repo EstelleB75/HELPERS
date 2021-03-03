@@ -1,5 +1,6 @@
 import Isotope from 'isotope-layout'
 import item from 'isotope-layout/js/item';
+import { end } from 'worker-farm';
 let queryRegexp;
 let filterValue;
 
@@ -31,8 +32,12 @@ const isotopeInit = () => {
   const filtersElem = document.querySelector('.subcats');
   filtersElem.addEventListener( 'click', ( event ) => {
     filterValue = event.target.innerText.replace('&', '\\&');
-    console.log(filterValue);
-
+    if (document.querySelector('.is-checked')) {
+      document.querySelector('.is-checked').classList.remove('is-checked');
+      event.target.classList.add('is-checked');
+    } else {
+      event.target.classList.add('is-checked');
+    }
     iso.arrange({ filter: filterCat });
   });
 }

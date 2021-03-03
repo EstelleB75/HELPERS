@@ -102,9 +102,12 @@
             opacity: 0.6;
             transition: opacity 0.3s ease;
           }
-
           .btn-ghost:hover {
             opacity: 1;
+          }
+          .is-checked{
+            background-color: #4A4A4A;
+            color: white;
           }
     }
 }
