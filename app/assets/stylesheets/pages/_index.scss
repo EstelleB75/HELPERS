@@ -134,14 +134,28 @@
 // }
 
 .fade-out-siblings > * {
+  transition: 300ms opacity;
+}
+
+.fade-out-siblings-ex > * {
   transition: 300ms opacity, 300ms transform;
 }
 
 .fade-out-siblings:hover > * {
   opacity: 0.4;
+  transition: 300ms transform;
+}
+
+.fade-out-siblings-ex:hover > * {
+  opacity: 0.4;
 }
 
 .fade-out-siblings:hover > *:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.fade-out-siblings-ex:hover > *:hover {
   transform: scale(1.1);
   opacity: 1;
 }
