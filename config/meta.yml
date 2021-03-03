@@ -1,0 +1,5 @@
+meta_product_name: "Helpers"
+meta_title: "Helpers - Solidarité, Assistance, Financement "
+meta_description: "Avec plus d’un million d’associations et d’organismes de soutien en France, il y a surement une solution qui vous attend"
+meta_image: "logo.png" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards
