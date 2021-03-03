@@ -1,15 +1,13 @@
-input[type="checkbox"] {
-  display:none;
+input[type="radio"] {
+  display: none;
 }
 
-input[type="checkbox"]:checked + label {
+input[type="radio"]:checked + label {
   background-color: $helpers-red;
   color:white;
 }
 
 .input_styling{
-
-
   label {
      background-color: white;
     padding: 20px;

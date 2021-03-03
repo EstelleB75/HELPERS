@@ -5,8 +5,9 @@
   <div class="d-flex flex-column">
     <% @tags.each do |tag| %>
     <div>
-      <%= check_box_tag "tag_#{tag.id}", tag.id, false, name: "tag" %>
+      <%= radio_button_tag "tag", tag.id, false, name: "tag" %>
       <%= label_tag "tag_#{tag.id}", tag.name %>
+      <%= hidden_field_tag "sub_cat", @sub_cat.id %>
       </div>
     <% end %>
     <div class="submit-btn">

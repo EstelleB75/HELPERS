@@ -5,12 +5,24 @@ class SearchsController < ApplicationController
   end
 
   def search_sub_cat
-    @sub_cat = SubCategory.find(params[:sub_cat])
-    @tags = Tag.where(sub_category: @sub_cat)
+    @category = Category.find(params[:category])
+    if params[:sub_cat]
+      @sub_cat = SubCategory.find(params[:sub_cat])
+      @tags = Tag.where(sub_category: @sub_cat)
+    else
+      redirect_to search_path(params: { type: @category.name })
+      flash[:alert] = "Vous devez selectionner un tag"
+    end
   end
 
   def search_tag
-    @tag = Tag.find(params[:tag])
+    @sub_cat = SubCategory.find(params[:sub_cat])
+    if params[:tag]
+      @tag = Tag.find(params[:tag])
+    else
+      redirect_to search_sub_cat_path(params: { sub_cat: @sub_cat.id, category: @sub_cat.category.id })
+      flash[:alert] = "Vous devez selectionner un tag"
+    end
   end
 
   def search_address
