@@ -1,11 +1,11 @@
 <div class="container-form">
-<div class="adresse-style bg-white p-5 m-5 d-flex justify-content-center align-items-center flex-column w-100">
+<div class="adresse-style bg-white p-5 mt-5 d-flex justify-content-center align-items-center flex-column w-100">
 <h2>C'est bientôt fini...</h2>
   <%= form_tag("/search_address", method: :get) do %>
   <div class="d-flex flex-column">
       <%= label_tag :address, "Recherche par proximité" %>
       <div id="adress-input">
-      <%= text_field_tag :address %>
+      <%= text_field_tag :address,"", placeholder: '  ex: 16 villa Gaudelet, Paris' %>
       </div>
       <%= hidden_field_tag :tag, @tag.id %>
       <div class="submit-btn">
