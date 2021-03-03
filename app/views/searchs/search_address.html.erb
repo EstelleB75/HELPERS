@@ -3,13 +3,11 @@
   <div class="separator d-flex justify-content-center align-items-center"></div>
   <br>
   <br>
-
-
     <div class="asso-cards m-5">
-    <div class="fade-out-siblings d-flex flex-wrap flex-row justify-content-center align-items-center px-10vw ">
-    <% if @assos.empty? %>
-    <p>Aucun résultat ne correspond à votre recherche <i class="fas fa-frown"></i>.</p>
-      <% else %>
+      <div class="fade-out-siblings d-flex flex-wrap flex-row justify-content-center align-items-center">
+<% if @assos.empty? %>
+<p>Aucun résultat ne correspond à votre recherche <i class="fas fa-frown"></i>.</p>
+  <% else %>
       <% @assos.each do |asso| %>
         <div class="element-item" data-cat="<%= asso.get_subcat.to_json %>" >
           <div class="asso-card custom-rounded custom-size" style="box-shadow: 4px 4px 14px rgba(0,0,0,0.1);">
