@@ -30,7 +30,7 @@
                         <%= link_to fav.asso.name, asso_path(fav.asso), class: "text-left a-without-color" %>
                       </div>
                       <div class="font-16" style="color: gray;">
-                        <%= fav.asso.description %>
+                        <%= fav.asso.description.truncate(150) %>
                       </div>
                       <%#= fav.asso.address %>
                       <div class="mt-auto d-flex justify-content-start flex-row pt-3" style="font-size: 14px;">
