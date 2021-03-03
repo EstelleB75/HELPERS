@@ -114,11 +114,6 @@ Asso.find_by(name: "Je t'aide").update(address: "54, rue Molière", email: " con
 
 Asso.find_by(name: "Emmaüs").update(address: "47, avenue de la Résistance", email: "relation.donateurs@emmaus-france.org", website: "https://emmaus-france.org/")
 
-# on fake un association tag pour les 8 premières associations, et le tag lien social, pour la démo mais pas en vrai
-# Asso.first(8).each do |asso|
-#     p
-# end
-
 
 
 
