@@ -43,7 +43,7 @@ const isotopeInit = () => {
         iso.arrange({ filter: filterCat });
       } else {
         document.querySelector('.is-checked').classList.remove('is-checked');
-        iso.arrange({filter: '*'});
+        iso.arrange({filter: filter});
       }
     } else {
       event.target.classList.add('is-checked');
