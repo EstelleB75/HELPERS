@@ -7,6 +7,16 @@ input[type="radio"]:checked + label {
   color:white;
 }
 
+#adress-input {
+  input[type="text"] {
+    border: 1px solid #ababab;
+    padding-left: 20px;
+  }
+  input[type="text"]:focus {
+    outline: none !important;
+  }
+}
+
 .input_styling{
   label {
     background-color: white;
