@@ -15,7 +15,7 @@ Category.destroy_all
 
 
 categories = [
-    { cat: "Solidarité", sub_cat: ["Santé", "Alimentaire", "Aide à la Personne", "Culture & Loisirs"] },
+    { cat: "Solidarité", sub_cat: ["Santé", "Dons", "Aide à la Personne", "Culture & Loisirs"] },
     { cat: "Assistance", sub_cat: %w{Harcelement Violences Abus} },
     { cat: "Financier", sub_cat: %w{Emploi Logement Transport Formation&Education Juridique} }
 ]
@@ -32,7 +32,7 @@ tags = {
     "Formation&Education" => %w{Reconversion Spécialisation Financement Entreprise Région AIF},
     "Juridique" => ["Droit", "Litige", "Procédure", "Conseil", "Démarche", "Faire appel"],
     "Culture & Loisirs" => %w{Sport Vacances Musée Activité Réduction Cours},
-    "Alimentaire" => ["Bon d'achat", "Paniers", "Dons", "Ticket restaurant", "Entraide"]
+    "Dons" => ["Bon d'achat", "Paniers", "Dons", "Ticket restaurant", "Entraide"]
 }
 
 categories.each do |cat|
@@ -49,7 +49,7 @@ end
 
 def set_asso(name, url, address, city, description, tags)
     file = URI.open(url)
-    p asso = Asso.new(
+    asso = Asso.new(
         name: name,
         address: address,
         city: city,
@@ -67,7 +67,7 @@ end
 associations = [
     {name: "ADMR", photo: "https://www.bainssuroust.fr/medias/2020/03/ADMR_baseline_JPG-scaled.jpg",address: "154, Rue des Pyrénées", city: "Paris", description: "Service d'aide à la personne. L'ADMR est un réseau associatif. Il intervient en France de la naissance à la fin de vie, dans quatre domaines : autonomie, services de confort à domicile, famille et santé. Il est constitué de 2 700 associations locales autonomes qui interviennent sur un territoire déterminé", tag: ["Aide à domicile", "Soin", "Service"]},
     {name: "Les Restos du coeur", photo: "https://causeaeffet.com/wp-content/uploads/2019/11/resto-du-coeur-logo.jpg", address: "4, CITE d'Hauteville", city: "Paris", description: "Les Restos ont pour but « d'aider et d'apporter une assistance bénévole aux personnes démunies, notamment dans le domaine alimentaire par l'accès à des repas gratuits", tag: ["Bon d'achat", "Dons", "Entraide"]},
-    {name: "Emmaüs", photo: "https://upload.wikimedia.org/wikipedia/fr/thumb/4/4d/Logo_EF_Couleur.svg/1200px-Logo_EF_Couleur.svg.png", address: "355, Rue des Pyrénées", city: "Montreuil", description: "Fidèle à la volonté de l'abbé Pierre, Emmaüs est devenu à la fois une fabrique d'innovations sociales et de solidarités pour aider des publics en situation de grande précarité", tag: ["Service", "Immobilier", "Social"]},
+    {name: "Emmaüs", photo: "https://upload.wikimedia.org/wikipedia/fr/thumb/4/4d/Logo_EF_Couleur.svg/1200px-Logo_EF_Couleur.svg.png", address: "355, Rue des Pyrénées", city: "Montreuil", description: "Fidèle à la volonté de l'abbé Pierre, Emmaüs est devenu à la fois une fabrique d'innovations sociales et de solidarités pour aider des publics en situation de grande précarité", tag: ["Service", "Immobilier", "Social", "Entraide"]},
     {name: "Je t'aide", photo: "https://associationjetaide.org/wp-content/uploads/2020/07/logo-jetaide-scaled.jpg", address: "54, Rue Molière,", city: "Ivry-sur-Seine", description: "Luttons contre l'isolement social des aidant.es ! Notre mission est de faire avancer les droits des aidants auprès des pouvoirs publics pour qu’aider ne rime pas avec précarité.", tag: ["Service", "Lien social"]},
     {name: "Aurore Association", photo: "https://upload.wikimedia.org/wikipedia/fr/f/fe/Association_Aurore_logo.png",address: "180, Rue FBG St Antoine", city: "Paris", description: "Accueillir et accompagner vers l’autonomie les personnes en situation de précarité ou d’exclusion via l’hébergement, les soins et l’insertion.", tag: ["Insertion", "Soin", "Hébergement"]},
     {name: "La Croix Rouge", photo: "https://www.mairie-confolens.fr/medias/2018/02/Croix-Rouge-Francaise.jpg",address: "12, Rue Auguste Laurent", city: "Paris", description: "Ses missions fondamentales sont l'urgence, le secourisme, l'action sociale, la formation, la santé et l'action internationale.", tag: ["Soin", "Maladie", "Lien social"]},
