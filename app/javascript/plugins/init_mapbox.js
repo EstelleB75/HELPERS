@@ -29,8 +29,14 @@ const initMapbox = () => {
     fitMapToMarkers(map, markers);
 
     const userPosition = navigator.geolocation.getCurrentPosition((position) => {
-      console.log(position);
-        })
+      new mapboxgl.Marker({ "color": "#fec5bb" })
+      .setLngLat([ position.coords.longitude, position.coords.latitude ])
+      .addTo(map);
+
+      const favCards = document.getElementById('fav-cards')
+      const event = new CustomEvent("positionAcquired", { detail: position.coords })
+      favCards.dispatchEvent(event)
+    })
   }
 };
 
