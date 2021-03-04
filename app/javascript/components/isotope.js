@@ -9,6 +9,7 @@ const filter = (itemElem) => queryRegexp ? itemElem.textContent.match(queryRegex
 const filterCat = (itemElem) => filterValue ? JSON.parse(itemElem.dataset.cat).includes(filterValue) : true
 
 const arrangeItems = (iso) => {
+    iso.arrange({filter: filter})
     const quicksearchField = document.querySelector('.quicksearch');
 
     queryRegexp = new RegExp( quicksearchField.value, 'gi' );
@@ -33,12 +34,18 @@ const isotopeInit = () => {
   filtersElem.addEventListener( 'click', ( event ) => {
     filterValue = event.target.innerText.replace('&', '\\&');
     if (document.querySelector('.is-checked')) {
-      document.querySelector('.is-checked').classList.remove('is-checked');
-      event.target.classList.add('is-checked');
+      if (event.target != document.querySelector('.is-checked')) {
+        document.querySelector('.is-checked').classList.remove('is-checked');
+        event.target.classList.add('is-checked');
+        iso.arrange({ filter: filterCat });
+      } else {
+        document.querySelector('.is-checked').classList.remove('is-checked');
+        iso.arrange({filter: '*'});
+      }
     } else {
       event.target.classList.add('is-checked');
+      iso.arrange({ filter: filterCat });
     }
-    iso.arrange({ filter: filterCat });
   });
 }
 
