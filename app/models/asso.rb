@@ -14,4 +14,8 @@ class Asso < ApplicationRecord
   def get_subcat
     self.tags.map(&:sub_category).map(&:name)
   end
+
+  def get_category
+    self.tags.map(&:sub_category).map(&:category).map(&:name)
+  end
 end
