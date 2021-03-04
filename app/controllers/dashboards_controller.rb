@@ -6,7 +6,8 @@ class DashboardsController < ApplicationController
     @markers = @assos.geocoded.map do |asso|
       {
         lat: asso.latitude,
-        lng: asso.longitude
+        lng: asso.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { asso: asso })
       }
     end
   end
