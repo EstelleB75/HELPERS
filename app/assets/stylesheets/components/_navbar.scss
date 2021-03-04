@@ -45,3 +45,14 @@
 #navbarDropdown {
   cursor: pointer;
 }
+
+#email-drop {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  border-bottom: 0.5px solid #A8A29F;
+}
+
+  .fa, .fas {
+    margin-right: 10px;
+  }
