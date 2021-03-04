@@ -3,24 +3,24 @@ input[type="radio"] {
 }
 
 input[type="radio"]:checked + label {
-  background-color: $helpers-red;
+  background-color: #a8a29f;
   color:white;
 }
 
 .input_styling{
   label {
-     background-color: white;
+    background-color: white;
     padding: 20px;
-    width: 258px;
-    color:#2f2f2f ;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    width: 650px;
+    color: #2f2f2f ;
+    margin-top: 15px;
+    margin-bottom: 15px;
     border-radius: 50px;
-    border: 1px solid #ababab; 
+    border: 1px solid #ababab;
     animation: showTopText 1s;
   }
   input {
-    background-color: #C43256;
+    background-color: #a8a29f;
     text-decoration: none;
     border: 1px solid $helpers-red ;
     padding: 14px;
@@ -31,14 +31,14 @@ input[type="radio"]:checked + label {
     animation: showTopText 2s;
   }
   input:hover {
-     background-color:$helpers-red;
+    background-color: #0B1B2D;
     color:white;
   }
   a {
 
-    background-color: #C43256;
+    background-color: #0B1B2D;
     text-decoration: none;
-    border: 1px solid #C43256 ;
+    border: 1px solid #0B1B2D ;
     padding: 14px;
     color: white ;
     border-radius: 100px;
@@ -53,8 +53,9 @@ input[type="radio"]:checked + label {
 .adresse-style {
   label {
     margin-bottom:20px;
-    font-size: 30px;
+    font-size: 20px;
     animation: showTopText 1s;
+    color: #a8a29f;
   }
 }
 
@@ -71,9 +72,9 @@ height: 45px;
   animation: showTopText 1s;
 
   input {
-    background-color: #C43256;
+    background-color: #a8a29f;
     text-decoration: none;
-    border: 1px solid #C43256 ;
+    border: 1px solid #a8a29f ;
     padding: 14px;
     color: white ;
     border-radius: 10px;
@@ -83,25 +84,25 @@ height: 45px;
 }
 
 a{
-  background-color: white;
+  background-color: #a8a29f;
   text-decoration: none;
-  border: 1px solid #C43256 ;
+  border: 1px solid #a8a29f;
   padding: 14px;
-  color:#C43256 ;
+  color: white;
   border-radius: 100px;
   margin: 10px;
   width: 50px;
   height: 50px;
 }
 a:hover {
-  background-color:#C43256;
+  background-color:#0B1B2D;
   color:white;
 }
 }
 
 .submit-btn{
   input:hover{
-  background-color:#C43256;
+  background-color: #0B1B2D;
   color:white;
 }
 }

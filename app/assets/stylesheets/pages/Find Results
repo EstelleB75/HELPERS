@@ -1,0 +1,10 @@
+Searching 193 files for ".container"
+
+/Users/estellebousquet/code/EstelleB75/HELPERS/app/assets/stylesheets/pages/_form.scss:
+   20  }
+   21
+   22: .container-form {
+   23    margin-top: 15px;
+   24    margin-right: auto;
+
+1 match in 1 file
