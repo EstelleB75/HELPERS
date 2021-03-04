@@ -10,11 +10,11 @@
       </div>
       <div class="col-4 d-flex flex-column justify-content-center align-items-center rounded">
         <div class="demi-rounded-up" style="background-image: url('https://images.unsplash.com/photo-1604604557577-4e27a33e57da?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1'); height: 200px; background-size: cover; background-position: center; width: 100%;"></div>
-        <%= link_to 'Assistance', search_path(:type => "Assistance" ), class: 'd-flex w-100 justify-content-center align-items-center helpers-red demi-rounded p-3 a-without-color font-20 lien' %>
+        <%= link_to 'Urgence', search_path(:type => "Assistance" ), class: 'd-flex w-100 justify-content-center align-items-center helpers-red demi-rounded p-3 a-without-color font-20 lien' %>
       </div>
       <div class="col-4 d-flex flex-column justify-content-center align-items-center rounded">
         <div class="demi-rounded-up" style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1'); height: 200px; background-size: cover; background-position: center; width: 100%;"></div>
-        <%= link_to 'Financier', search_path(:type => "Financier" ), class: 'd-flex w-100 justify-content-center align-items-center helpers-yellow demi-rounded p-3 a-without-color font-20 lien' %>
+        <%= link_to 'Financement', search_path(:type => "Financier" ), class: 'd-flex w-100 justify-content-center align-items-center helpers-yellow demi-rounded p-3 a-without-color font-20 lien' %>
       </div>
     </div>
   </div>
@@ -46,7 +46,7 @@
     <% end %>
   </div>
   <div class="asso-cards m-5 iso-grid">
-    <div class="fade-out-siblings d-flex flex-wrap flex-row justify-content-center align-items-center px-10vw ">
+    <div class="fade-out-siblings d-flex flex-wrap flex-row justify-content-center align-items-center">
       <% @assos.each do |asso| %>
         <div class="element-item" data-cat="<%= asso.get_subcat.to_json %>" >
           <div class="asso-card custom-rounded custom-size" style="box-shadow: 4px 4px 14px rgba(0,0,0,0.1);">

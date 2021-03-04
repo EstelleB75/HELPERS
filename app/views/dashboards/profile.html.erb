@@ -10,7 +10,7 @@
         <h3 class="pt-4 bolder-text">Mes favoris</h3>
         <% if current_user.favs.empty? %>
           <div class="empty-favs d-flex justify-content-center align-items-center">
-            <p class="text-middle">Vous n'avez pas encore de Favoris. Cliquez pour en ajouter !<%= icon 'fas', 'heart', class: "heart" %> présente sur les fiches.</p>
+            <p class="text-middle">Pas d'association en favoris ? Cliquez sur <%= icon 'fas', 'heart', class: "heart" %>pour l'ajouter en favoris.</p>
           </div>
         <% else %>
           <div class="asso-cards m-5">

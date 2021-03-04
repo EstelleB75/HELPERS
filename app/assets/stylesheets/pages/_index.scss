@@ -67,7 +67,7 @@
 }
 
 .a-without-color {
-    color: #000 !important;
+    color: #0b1c2d !important;
 }
 
 // .iso-grid{
@@ -145,12 +145,8 @@
 }
 
 .fade-out-siblings:hover > * {
-  opacity: 0.4;
+  opacity: 0.5;
   transition: 300ms transform;
-}
-
-.fade-out-siblings-ex:hover > * {
-  opacity: 0.4;
 }
 
 .fade-out-siblings:hover > *:hover {
