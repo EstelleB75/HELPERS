@@ -49,7 +49,7 @@ end
 
 def set_asso(name, url, address, city, description, tags)
     file = URI.open(url)
-    p asso = Asso.new(
+    asso = Asso.new(
         name: name,
         address: address,
         city: city,
