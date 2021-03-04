@@ -13,20 +13,42 @@
           </div>
         <% end %>
         <div id="show-tags">
-          <% @asso.tags.each do |tag| %>
-            <% if tag.sub_category.category == "Solidarité" %>
+        <% if @asso.get_category.include?("Solidarité") %>
             <div id="show-cat">
                 <div id="show-tagbox">
-                  <span class="badge"> "Solidarité" </span>
+                  <span class="badge"> Solidarité </span>
                 </div>
             </div>
-            <% end %>
+          <% end %>
+          <% if @asso.get_category.include?("Assistance") %>
+            <div id="show-cat">
+                <div id="show-tagbox">
+                  <span class="badge"> Assistance </span>
+                </div>
+            </div>
+          <% end %>
+          <% if @asso.get_category.include?("Financier") %>
+            <div id="show-cat">
+                <div id="show-tagbox">
+                  <span class="badge"> Financier </span>
+                </div>
+            </div>
           <% end %>
         </div>
       </div>
-
       <div id="show-info">
         <div id="asso-coord">
+          <div data-controller="fav" id="fav">
+            <% if current_user.favorites?(@asso) %>
+              <%= link_to (Fav.find_by(asso: @asso, user: current_user)), method: :delete, data: {action: 'click->fav#update'}, remote: true do %>
+                <%= icon 'fas', 'heart', data: {'fav-target': 'icon'} %>
+              <% end %>
+            <% else %>
+              <%= link_to asso_favs_path(@asso), method: :post, data: {action: 'click->fav#update'}, remote: true do %>
+                <%= icon 'far', 'heart', data: {'fav-target': 'icon'} %>
+              <% end %>
+            <% end %>
+          </div>
           <h1 id="asso-name"> <%= @asso.name %> </h1>
           <%= @asso.address %>
           <%= @asso.city %>
