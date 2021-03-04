@@ -13,18 +13,29 @@
           </div>
         <% end %>
         <div id="show-tags">
-          <% @asso.tags.each do |tag| %>
-            <% if tag.sub_category.category == "Solidarité" %>
+        <% if @asso.get_category.include?("Solidarité") %>
             <div id="show-cat">
                 <div id="show-tagbox">
-                  <span class="badge"> "Solidarité" </span>
+                  <span class="badge"> Solidarité </span>
                 </div>
             </div>
-            <% end %>
+          <% end %>
+          <% if @asso.get_category.include?("Assistance") %>
+            <div id="show-cat">
+                <div id="show-tagbox">
+                  <span class="badge"> Assistance </span>
+                </div>
+            </div>
+          <% end %>
+          <% if @asso.get_category.include?("Financier") %>
+            <div id="show-cat">
+                <div id="show-tagbox">
+                  <span class="badge"> Financier </span>
+                </div>
+            </div>
           <% end %>
         </div>
       </div>
-
       <div id="show-info">
         <div id="asso-coord">
           <div data-controller="fav" id="fav">
