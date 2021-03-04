@@ -47,12 +47,13 @@ categories.each do |cat|
     end
 end
 
-def set_asso(name, url, city, description, tags)
+def set_asso(name, url, address, city, description, tags)
     file = URI.open(url)
-    asso = Asso.new(
+    p asso = Asso.new(
         name: name,
+        address: address,
         city: city,
-        description: description,
+        description: description
         )
 
     asso.photo.attach(io: file, filename: 'image.png')
@@ -66,7 +67,7 @@ end
 associations = [
     {name: "ADMR", photo: "https://www.bainssuroust.fr/medias/2020/03/ADMR_baseline_JPG-scaled.jpg",address: "154, Rue des Pyrénées", city: "Paris", description: "Service d'aide à la personne. L'ADMR est un réseau associatif. Il intervient en France de la naissance à la fin de vie, dans quatre domaines : autonomie, services de confort à domicile, famille et santé. Il est constitué de 2 700 associations locales autonomes qui interviennent sur un territoire déterminé", tag: ["Aide à domicile", "Soin", "Service"]},
     {name: "Les Restos du coeur", photo: "https://causeaeffet.com/wp-content/uploads/2019/11/resto-du-coeur-logo.jpg", address: "4, CITE d'Hauteville", city: "Paris", description: "Les Restos ont pour but « d'aider et d'apporter une assistance bénévole aux personnes démunies, notamment dans le domaine alimentaire par l'accès à des repas gratuits", tag: ["Bon d'achat", "Dons", "Entraide"]},
-    {name: "Emmaüs", photo: "https://upload.wikimedia.org/wikipedia/fr/thumb/4/4d/Logo_EF_Couleur.svg/1200px-Logo_EF_Couleur.svg.png", address: "355, Rue des Pyrénées" city: "Montreuil", description: "Fidèle à la volonté de l'abbé Pierre, Emmaüs est devenu à la fois une fabrique d'innovations sociales et de solidarités pour aider des publics en situation de grande précarité", tag: ["Service", "Immobilier", "Social"]},
+    {name: "Emmaüs", photo: "https://upload.wikimedia.org/wikipedia/fr/thumb/4/4d/Logo_EF_Couleur.svg/1200px-Logo_EF_Couleur.svg.png", address: "355, Rue des Pyrénées", city: "Montreuil", description: "Fidèle à la volonté de l'abbé Pierre, Emmaüs est devenu à la fois une fabrique d'innovations sociales et de solidarités pour aider des publics en situation de grande précarité", tag: ["Service", "Immobilier", "Social"]},
     {name: "Je t'aide", photo: "https://associationjetaide.org/wp-content/uploads/2020/07/logo-jetaide-scaled.jpg", address: "54, Rue Molière,", city: "Ivry-sur-Seine", description: "Luttons contre l'isolement social des aidant.es ! Notre mission est de faire avancer les droits des aidants auprès des pouvoirs publics pour qu’aider ne rime pas avec précarité.", tag: ["Service", "Lien social"]},
     {name: "Aurore Association", photo: "https://upload.wikimedia.org/wikipedia/fr/f/fe/Association_Aurore_logo.png",address: "180, Rue FBG St Antoine", city: "Paris", description: "Accueillir et accompagner vers l’autonomie les personnes en situation de précarité ou d’exclusion via l’hébergement, les soins et l’insertion.", tag: ["Insertion", "Soin", "Hébergement"]},
     {name: "La Croix Rouge", photo: "https://www.mairie-confolens.fr/medias/2018/02/Croix-Rouge-Francaise.jpg",address: "12, Rue Auguste Laurent", city: "Paris", description: "Ses missions fondamentales sont l'urgence, le secourisme, l'action sociale, la formation, la santé et l'action internationale.", tag: ["Soin", "Maladie", "Lien social"]},
@@ -102,12 +103,12 @@ associations = [
     {name: "Bouée d'espoir", photo: "https://www.commeon.com/sites/default/files/bouee-despoir-logo-fondation.png",address: "90, rue de l’Assomption", city: "Paris", description: "Bouée d’espoir fait front contre l’exclusion par une action de partage, concrète et suivie. L’association s’oppose à la dynamique de marginalisation et d’exclusion qui touche de plus en plus d’individus de tous âges et de toutes origines.", tag: ["Lien social", "Psychologie", "Entraide"]},
     {name: "Les auxiliaires des aveugles", photo: "https://pimcore.france-media.net/var/assets/images/aa_photo.png",address: "71, AV de Breteuil", city: "Paris", description: "Les auxiliaires des aveugles est une association qui met en lien des personnes aveugles ou malvoyantes avec des bénévoles pour les aider dans leur quotidien.", tag: ["Soin", "Maladie", "Mobilité"]},
     {name: "Le silence des justes", photo: "https://lesilencedesjustes.fr/wp-content/uploads/2019/05/La-Boutique-des-justes-2.jpg",address: "18, Rue Goubet", city: "Paris", description: "Le silence des justes accompagne les jeunes avec autisme et trouble apparentés, ainsi que leurs familles, depuis la prise en charge précoce jusqu’à leur devenir.", tag: ["Soin", "Maladie", "Lien social"]},
-    {name: "AFEH" photo: "https://www.afeh.net/images/LOGO/Logo_AFEH_Bloc.png",address: "8, Rue Brillat Savarin", city: "Paris" ,description:"L’AFEH est l’association des familles d’enfants handicapés de La Poste et Orange. Créée en 1969, elle informe, conseille, soutient et accompagne les familles adhérentes tout au long du parcours de vie de leur enfant, quels que soient son âge et le type de handicap.",tag: ["Aide à domicile", "Soin", "Mobilité"]},
+    {name: "AFEH", photo: "https://www.afeh.net/images/LOGO/Logo_AFEH_Bloc.png",address: "8, Rue Brillat Savarin", city: "Paris" ,description:"L’AFEH est l’association des familles d’enfants handicapés de La Poste et Orange. Créée en 1969, elle informe, conseille, soutient et accompagne les familles adhérentes tout au long du parcours de vie de leur enfant, quels que soient son âge et le type de handicap.",tag: ["Aide à domicile", "Soin", "Mobilité"]},
     
 ]
 
 associations.each do |asso|
-    set_asso(asso[:name], asso[:photo], asso[:city], asso[:description], asso[:tag])
+    set_asso(asso[:name], asso[:photo], asso[:address], asso[:city], asso[:description], asso[:tag])
 end
 
 Asso.find_by(name: "ADMR").update(address: "184 A, rue du Faubourg Saint-Denis", phone_number: "01 44 65 55 55", email: "info@admr.org", website: "https://www.admr.org/")
