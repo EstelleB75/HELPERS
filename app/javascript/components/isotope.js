@@ -10,6 +10,9 @@ const filterCat = (itemElem) => filterValue ? JSON.parse(itemElem.dataset.cat).i
 
 const arrangeItems = (iso) => {
     iso.arrange({filter: filter})
+    if (document.querySelector('.is-checked')) {
+      document.querySelector('.is-checked').classList.remove('is-checked');
+    }
     const quicksearchField = document.querySelector('.quicksearch');
 
     queryRegexp = new RegExp( quicksearchField.value, 'gi' );
