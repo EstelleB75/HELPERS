@@ -29,7 +29,9 @@ const initMapbox = () => {
 
     const userPosition = navigator.geolocation.getCurrentPosition((position) => {
       console.log(position);
-});
+        })
+  }
+};
 
 
 
