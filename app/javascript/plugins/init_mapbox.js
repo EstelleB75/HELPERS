@@ -1,7 +1,6 @@
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
-const mapElement = document.getElementById('map');
 
 const fitMapToMarkers = (map, markers) => {
   const bounds = new mapboxgl.LngLatBounds();
@@ -11,6 +10,8 @@ const fitMapToMarkers = (map, markers) => {
 
 const initMapbox = () => {
 
+  const mapElement = document.getElementById('map');
+  
   if (mapElement) {
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     const map = new mapboxgl.Map({
