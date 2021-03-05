@@ -3,7 +3,7 @@
 <h2>Précisez votre adresse :</h2>
   <%= form_tag("/search_address", method: :get) do %>
   <div class="d-flex flex-column">
-      <%= label_tag :address, "Trouvez la solution la plus porche !" %>
+      <%= label_tag :address, "Trouvez la solution la plus proche !" %>
       <div id="adress-input">
       <%= text_field_tag :address,"", placeholder: '  ex: 16 villa Gaudelet, Paris' %>
       </div>
