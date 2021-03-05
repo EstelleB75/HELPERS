@@ -20,7 +20,7 @@
           <div class="pr-3"><%= icon 'fas', 'city' %> <%= fav.asso.city %></div>
           <% if @latitude.present? && fav.asso.latitude.present? %>  
           <div class="pr-3">
-           <%= icon 'fas', 'map-marker-alt'%> Se trouve à <%= number_to_human fav.asso.distance_to([@latitude, @longitude]) %> km
+            <%= icon 'fas', 'map-marker-alt'%> Se trouve à <%= number_to_human fav.asso.distance_to([@latitude, @longitude]) %> km
           </div>
           <% end %>
           <!--  <div class="pr-3"><%= icon 'fas', 'phone' %> <%#= asso.phone_number%></div> -->
