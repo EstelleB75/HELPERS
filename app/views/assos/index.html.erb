@@ -20,8 +20,7 @@
   </div>
 </div>
 <div id="barre-de-recherche" class="bg-white index-display pt-5">
-  <!--   <div class="bg-white index-display pt-5">
- -->    <br>
+  <br>
   <h2 class="text-center bolder-text p-3 index-titleh2">Toutes les aides</h2>
   <div class="separator d-flex justify-content-center align-items-center"></div>
   <br>
@@ -70,7 +69,7 @@
                 <div class="pr-3"><%= icon 'fas', 'city' %> <%= asso.city %></div>
                 <div class="pr-3"><%= link_to icon 'far', 'envelope', Mail %> <%asso.email %></div>
                 <div class="pr-3"><%=link_to icon 'fas', 'at' %> Site <%asso.website %></div>
-                <!--  <div class="pr-3"><%= icon 'fas', 'phone' %> <%= asso.phone_number%></div> -->
+                <!--  <div class="pr-3"><%= icon 'fas', 'phone' %> <%= asso.phone_number%> -->
                 <div data-controller="fav" id="fav_card">
 
                   <% if current_user.favorites?(asso) %>
