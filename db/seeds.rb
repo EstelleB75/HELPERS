@@ -120,15 +120,3 @@ Asso.find_by(name: "Je t'aide").update(email: " contact@associationjetaide.org",
 
 Asso.find_by(name: "Emmaüs").update(email: "relation.donateurs@emmaus-france.org", website: "https://emmaus-france.org/")
 
-
-
-
-
-
-
-
-
-
-
-
-
