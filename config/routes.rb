@@ -12,6 +12,5 @@ Rails.application.routes.draw do
   resources :assos do
     resources :favs, only: [ :new, :create ]
   end
-  # checking something
   resources :favs, only: [ :destroy ]
 end
